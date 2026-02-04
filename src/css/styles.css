@@ -1,0 +1,110 @@
+body { padding-top: 0; } 
+.navbar .nav-link, .navbar .navbar-text, .navbar .navbar-brand { color: #EFE6DF; } /* ensure contrast */
+
+/* Navbar toggler: remove spacing and show simple SVG hamburger */
+
+.navbar-toggler{
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  
+}
+.navbar-toggler:focus{outline: none; box-shadow:none}
+.navbar-toggler svg{display:block; width:31px; height:26px}
+.menu-label{font-weight:600}
+
+
+/* Thinner focus/active ring for the navbar toggler */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:focus-visible{
+  outline: none !important;
+  /* smaller ring than Bootstrap default */
+  box-shadow: 0 0 0 0.12rem rgba(15, 7, 13, 0.2) !important;
+  border-width: 1px !important;
+}
+
+
+
+.navbar.bg-body-tertiary{
+  background: transparent !important;
+  backdrop-filter: none;
+  width: 100%;
+  height: 81px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  background: rgba(147, 145, 145, 0);
+  backdrop-filter: blur(0px);
+}
+
+/* push page content below fixed navbar */
+body{padding-top:81px}
+/*Video play css*/
+#filter{
+  position: relative;
+  z-index: 1;
+}
+#filter::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FF3688; /* pink overlay color */
+  z-index: 2;
+    opacity: 0.4;
+}
+#head_video{
+  width: 100%;
+  height: 1080px;
+  background-color: lightgray;
+  overflow: hidden;
+  position: relative; /* ensure absolute child positions correctly */
+  margin-top: -100px;
+  
+}
+#head_video video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* Hide native big overlay play button (WebKit/Blink) */
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Hide small play button inside the controls (WebKit/Blink) */
+video::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Hide timeline / progress bar and time displays (WebKit/Blink) */
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+}
+
+/* Optionally hide other control parts if needed */
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+/* Firefox: best-effort (may hide most controls) */
+video::-moz-media-controls {
+  display: none !important;
+}
