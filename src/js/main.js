@@ -11,3 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+// Toggle navbar background after scrolling past the hero video
+document.addEventListener('DOMContentLoaded', () => {
+	const navbar = document.querySelector('.navbar');
+	const hero = document.getElementById('section_1');
+	if (!navbar || !hero) return;
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				// hero is visible -> remove scrolled state
+				navbar.classList.remove('scrolled');
+			} else {
+				// hero not visible -> add scrolled state
+				navbar.classList.add('scrolled');
+			}
+		});
+	}, { root: null, threshold: 0, rootMargin: '-20% 0px 0px 0px' });
+
+	observer.observe(hero);
+});
+
