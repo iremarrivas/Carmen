@@ -32,3 +32,140 @@ document.addEventListener('DOMContentLoaded', () => {
 	observer.observe(hero);
 });
 
+// Footer form validation
+document.addEventListener('DOMContentLoaded', () => {
+	const form = document.getElementById('footerForm');
+	if (!form) return;
+
+	const controls = Array.from(form.querySelectorAll('input[name]'));
+
+	function showError(control, message) {
+		const errEl = control.closest('.field') ? control.closest('.field').querySelector('.error-message') : control.parentElement.querySelector('.error-message');
+		if (errEl) errEl.textContent = message || '';
+		if (message) control.setAttribute('aria-invalid', 'true'); else control.removeAttribute('aria-invalid');
+	}
+
+	function validateControl(control) {
+		// pattern-specific message for name fields
+		if ((control.id === 'firstName' || control.id === 'lastName') && control.validity.patternMismatch) {
+			showError(control, 'No uses números ni caracteres inválidos (solo letras espacios - y \\' );
+			return false;
+		}
+		// checkbox handled via checked
+		if (control.type === 'checkbox') {
+			if (!control.checked) {
+				showError(control, 'Acepta la política para continuar.');
+				return false;
+			}
+			showError(control, '');
+			return true;
+		}
+
+		if (!control.checkValidity()) {
+			// use browser's validation message where possible
+			showError(control, control.validationMessage || 'Campo inválido');
+			return false;
+		}
+		showError(control, '');
+		return true;
+	}
+
+	// live validation on blur/input. Additionally sanitize name fields while typing.
+	controls.forEach(c => {
+		c.addEventListener('input', () => {
+			if (c.id === 'firstName' || c.id === 'lastName') {
+				// allow letters (including accents), spaces, hyphen and apostrophe
+				const allowed = c.value.match(/[A-Za-zÀ-ÖØ-öø-ÿ\s'\-]+/g);
+				const cleaned = allowed ? allowed.join('') : '';
+				if (cleaned !== c.value) {
+					const prevPos = c.selectionStart || c.value.length;
+					c.value = cleaned;
+					// move caret to end for simplicity
+					try { c.setSelectionRange(cleaned.length, cleaned.length); } catch (e) {}
+					showError(c, 'Se eliminaron caracteres no permitidos.');
+					// clear transient message
+					if (c._errorTimeout) clearTimeout(c._errorTimeout);
+					c._errorTimeout = setTimeout(() => { showError(c, ''); }, 1400);
+				}
+			}
+
+			// sanitize phone input in real-time: allow digits, +, (), -, spaces
+			if (c.id === 'phone') {
+				const allowed = c.value.match(/[0-9+()\-\s]+/g);
+				const cleaned = allowed ? allowed.join('') : '';
+				if (cleaned !== c.value) {
+					c.value = cleaned;
+					showError(c, 'Solo se permiten números y los símbolos +()-.');
+					if (c._errorTimeout) clearTimeout(c._errorTimeout);
+					c._errorTimeout = setTimeout(() => { showError(c, ''); }, 1400);
+				}
+			}
+			validateControl(c);
+		});
+		c.addEventListener('blur', () => validateControl(c));
+	});
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		let valid = true;
+		controls.forEach(c => { if (!validateControl(c)) valid = false; });
+		if (!valid) {
+			// focus first invalid
+			const firstInvalid = form.querySelector('[aria-invalid="true"]');
+			if (firstInvalid) firstInvalid.focus();
+			return;
+		}
+
+		// Simulate successful submit (replace with real submission if desired)
+		alert('Gracias — formulario enviado (simulado).');
+		form.reset();
+		controls.forEach(c => showError(c, ''));
+	});
+});
+
+
+
+//Carousel initialization (if using Swiper for the carousel in section 6)
+
+// Esperamos a que todo el contenido cargue
+window.addEventListener('load', function() {
+  // Verificamos que Swiper existe para evitar errores
+  if (typeof Swiper !== 'undefined') {
+    const swiper = new Swiper('#swiper-final', {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      speed: 2500, 
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 500, // Imágenes más juntas (reduce el gap)
+        depth: 200,   // Empuja las imágenes al fondo
+        modifier: 1,
+        slideShadows: false, // Desactivado para que la transparencia luzca limpia
+      },
+      // Forzar renderizado
+      observer: true,
+      observeParents: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true, // Permitir clics en los puntos de paginación
+      },
+      on: {
+        slideChange: function () {
+          console.log('Slide cambiado a:', this.activeIndex);
+        },
+        reachEnd: function () {
+          console.log('Último slide alcanzado, reiniciando...');
+          this.slideToLoop(0); // Reinicia el loop al primer slide
+        },
+      },
+    });
+  } else {
+    console.error("Swiper no está cargado correctamente.");
+  }
+});

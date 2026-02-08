@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/videoCardSec3.css">
+    <link rel="stylesheet" href="css/faceMask.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/section_Img.css">
+    <link rel="stylesheet" href="css/carousel.css">
+
     <script type="module" src="js/main.js" defer></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
@@ -47,23 +66,23 @@
       </div>
     </div>
 <!--Video Header Section 1-->
-<section id="section_1">
+<div id="section_1">
   
   <div class="container-fluid p-0" id="filter">
       <div id="head_video">
-        <video id="heroVideo" src="/img/GettyImages-923078808.mp4" autoplay muted loop playsinline width="100%" poster="/img/CarmenLogoNEG.png">Your browser does not support the video tag.</video>
+        <video id="heroVideo" src="/img/GettyImages-923078808.mp4" autoplay muted loop playsinline width="100%" poster="/img/CarmenLogoNEG.png"></video>
       
         <!-- Carmen name logo sit above all overlays -->
         <img id="carmenNameLogoBig" src="/img/carmenName.png" alt="">    
       
       </div>
   </div>
-</section>
+</div>
 <!--Section 2: vectors as background images -->
-<section class="vectors-section">
+<div class="vectors">
   <!-- Column of images on -->
     <div id="columnIMG" >
-        <img id="col-img-1" class="imgSizeColumn pos-top offset-left stagger-1" src="/img/face26.png" alt="">
+      <!--  <img id="col-img-1" class="imgSizeColumn pos-top offset-left stagger-1" src="/img/face26.png" alt="">
         <img id="col-img-2" class="imgSizeColumn pos-center offset-none stagger-2" src="/img/face26.png" alt="">
         <img id="col-img-3" class="imgSizeColumn pos-bottom offset-right stagger-3" src="/img/face26.png" alt="">
         <img id="col-img-4" class="imgSizeColumn pos-bottom offset-right stagger-3" src="/img/face26.png" alt="">
@@ -74,43 +93,82 @@
         <img id="col-img-9" class="imgSizeColumn pos-bottom offset-right stagger-3" src="/img/face26.png" alt="">
         <img id="col-img-10" class="imgSizeColumn pos-bottom offset-right stagger-3" src="/img/face26.png" alt="">
         <img id="col-img-11" class="imgSizeColumn pos-bottom offset-right stagger-3" src="/img/face26.png" alt="">  
-        <!--Images of the pink text in the middle-->
+        Images of the pink text in the middle--> 
         <img id="col-img-LogoPos" class="imgSizeColumn pos-center offset-none stagger-2" src="/img/Carmen_Logo_POS.png" alt="">
         <img id="col-img-pinkText" class="imgSizeColumn pos-center offset-none stagger-2" src="/img/text3_rosa.png" alt="">
+        <img id="col-img-smallPink" src="/img/text3_small.png" alt="">
     </div>
 
-
-    
+<!-- Section 3: video cards -->
     <div id="section_3" class="py-5">
       <div class="container">
         <div class="row g-4">
           <div class="col-12 col-sm-4 col-md-4">
-            <div id="card-1" class="card h-100 text-center">
-              <video class="card-video mx-auto my-0" src="/img/GettyImages-923078808.mp4" autoplay muted loop playsinline poster="/img/CarmenLogoNEG.png" aria-label="Card video 1"></video>
-              
+<!-- CARD 1-->
+            <div id="card-1" class="card text-center has-center">
+              <video class="card-video mx-auto my-0" src="/img/GettyImages-1386831760.mp4" autoplay muted loop playsinline poster="/img/CarmenLogoNEG.png" aria-label="Card video 1"></video>
+              <div class="card-center-img">
+                <img src="/icons/VectorStar.png" alt="center icon">
+                <!-- icon  -->
+                <div class="card-center-Icon">
+                  <img src="/icons/bx_loader-circle.png" alt="loader icon">
+                </div>
+              </div>
+              <div class="card-top-img">
+                <img src="/img/PENSAR.png" alt="">
+              </div>
+              <div class="card-bottom-img">
+                <img src="/img/pensarIconImg.png" alt="pensar icon">
+              </div>
+            
             </div>
           </div>
-
+<!-- CARD 2-->
           <div class="col-12 col-sm-4 col-md-4">
-            <div id="card-2" class="card h-100 text-center">
-              <video class="card-video mx-auto my-0" src="/img/GettyImages-923078808.mp4" autoplay muted loop playsinline poster="/img/CarmenLogoNEG.png" aria-label="Card video 2"></video>
-           
+            <div id="card-2" class="card text-center has-center">
+              <video class="card-video mx-auto my-0" src="/img/GettyImages-2155410697.mp4" autoplay muted loop playsinline poster="/img/CarmenLogoNEG.png" aria-label="Card video 2"></video>
+              <div class="card-center-img">
+                <img src="/icons/VectorStar.png" alt="center icon">
+                <!-- icon  -->
+                <div class="card-center-Icon">
+                  <img src="/icons/chat.png" alt="loader icon">
+                </div>
+              </div>
+              <div class="card-top-img">
+                <img src="/img/HABLAR.png" alt="">
+              </div>
+              <div class="card-bottom-img">
+                <img src="/img/Sensibilizar.png" alt="pensar icon">
+              </div>
+
             </div>
           </div>
-
+ <!-- CARD 3-->         
           <div class="col-12 col-sm-4 col-md-4">
-            <div id="card-3" class="card h-100 text-center">
-              <video class="card-video mx-auto my-0" src="/img/GettyImages-923078808.mp4" autoplay muted loop playsinline poster="/img/CarmenLogoNEG.png" aria-label="Card video 3"></video>
-              
+            <div id="card-3" class="card text-center has-center">
+              <video class="card-video mx-auto my-0" src="/img/GettyImages-2159706100.mp4" autoplay muted loop playsinline poster="/img/CarmenLogoNEG.png" aria-label="Card video 3"></video>
+              <div class="card-center-img">
+                <img src="/icons/VectorStar.png" alt="center icon">
+                <!-- icon  -->
+                <div class="card-center-Icon">
+                  <img src="/icons/star-rounded.png" alt="loader icon">
+                </div>
+              </div>
+              <div class="card-top-img">
+                <img src="/img/IMPACTAR.png" alt="">
+              </div>
+              <div class="card-bottom-img">
+                <img src="/img/Conseguir.png" alt="pensar icon">
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     <img id="generoImage" src="/img/genero.png" alt="">
+</div>
 
-  </section>
 
   <div id="section_4_Genero" >
 
@@ -118,9 +176,183 @@
     <img id="vectorCarmenImage" src="img/VectorCarmen.png" alt="logo_carme">
 
   </div>
+<!-- Section 5: face mask with pink faces on the sides -->
+  <div id="section_5">
+    <div class="container">
+
+      <div id="letter_Carme_Sec5">
+        <img src="/img/DetrasDeCarme.png" alt="">
+      </div>
+
+      <div id="maskFace">
+        <img  src="/img/Mask_group.png" alt="">
+      </div>
+      <!-- pink faces left-->
+      <div class="pinkFaces">
+        <img src="/img/VectorPinkFace.png" alt="">
+      </div>
+      <!-- pink faces right-->
+      <div class="pinkFacesRight">
+        <img src="/img/pinkFaceRight.png" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  
+
+  </div>
+
+<div id="section_Img">
+    <div class="container">
+
+      <div id="title_Dra">
+        <img id="imgSec5" src="/img/Dra.png" alt="">
+      </div>
+      <div id="licencias_Sec5">
+        <img id="imgSec5" src="/img/licencias2.png" alt="">
+      </div>
+
+      <div id="miembros">
+        <img src="/img/nuestros_miembros.png" alt="">
+      </div>
+
+    <div id="columnTopImg">  
+        <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              <div class="col">
+                <img src="/img/Capa_1.png" alt="">
+              </div>
+              
+            </div>
+          </div>
+
+
+          
+    </div> 
+  </div>
+ 
+</div>
+
+  <div id="section_6">
+    
+    <div class="container">
+  
+        <div id="title_impacto">
+            <img src="/img/datos.png" alt="">
+          </div>
+      <!--Carrusel-->
+   <div id="carrusel" class="py-5">         
+        <div id="swiper-final" class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/img/Group_23.png" alt="1"></div>
+            <div class="swiper-slide"><img src="/img/Group_23.png" alt="2"></div>
+            <div class="swiper-slide"><img src="/img/Group_23.png" alt="3"></div>
+            <div class="swiper-slide"><img src="/img/Group_23.png" alt="4"></div>
+             <div class="swiper-slide"><img src="/img/Group_23.png" alt="5"></div>
+            </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+<!-- Section 7: footer with form -->
+
+  <footer id="section_7">
+    <video src="/img/GettyImages-2169919307.mp4" autoplay muted loop playsinline width="100%" ></video>
+    <div>
+      <img id="uneteImg" src="/img/unete_a.png" alt="">
+    </div>
+  <div>
+    <img id="footerCamenImg" src="/img/carmenName.png" alt="">
+  </div>
+  <form id="footerForm" class="form" novalidate>
+  <div class="form-grid">
+    <div class="field">
+      <label for="firstName">NOMBRE</label>
+      <input id="firstName" name="firstName" type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" title="Solo letras, espacios, guiones y apóstrofes. No números." required>
+      <div class="error-message" aria-live="polite"></div>
+    </div>
+
+    <div class="field">
+      <label for="lastName">APELLIDOS</label>
+      <input id="lastName" name="lastName" type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" title="Solo letras, espacios, guiones y apóstrofes. No números." required>
+      <div class="error-message" aria-live="polite"></div>
+    </div>
+
+    <div class="field">
+      <label for="email">EMAIL</label>
+      <input id="email" name="email" type="email" required>
+      <div class="error-message" aria-live="polite"></div>
+    </div>
+
+    <div class="field">
+      <label for="phone">TELÉFONO</label>
+      <input id="phone" name="phone" type="tel" pattern="[0-9+()\-\s]{6,}" required>
+      <div class="error-message" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <label class="checkbox">
+    <input id="consent" name="consent" type="checkbox" required>
+    <span></span>
+   <p> He leído y acepto la política de privacidad y las
+    condiciones legales</p>
+    <div class="error-message" aria-live="polite"></div>
+  </label>
+
+  <button class="submit" type="submit">
+    <span>❤</span> ENVIAR
+  </button>
+</form>
+
+  </footer>
 
   <!-- removed duplicate global logo; single logo remains inside #head_video -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 </html>

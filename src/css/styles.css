@@ -1,738 +1,5 @@
-body { padding-top: 0; background-color: #fe3737; } 
-.navbar .nav-link, .navbar .navbar-text, .navbar .navbar-brand { color: #EFE6DF; }/* ensure contrast */
-
-/* Navbar toggler */
-
-.navbar-toggler{
-  padding:0 !important;
-  margin:0 !important;
-  border:0 !important;
-  background:transparent !important;
-  
-}
-.navbar-toggler:focus{outline: none; box-shadow:none}
-.navbar-toggler svg{display:block; width:31px; height:26px}
-.menu-label{font-weight:600}
-
-
-/* Thinner ring for the navbar toggler */
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler:focus-visible{
-  outline: none !important;
-  /* smaller ring than Bootstrap default */
-  box-shadow: 0 0 0 0.12rem rgba(15, 7, 13, 0.2) !important;
-  border-width: 1px !important;
-}
-
-
-
-.navbar.bg-body-tertiary{
-  background: transparent !important;
-  backdrop-filter: none;
-  width: 100%;
-  height: 81px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2000;
-  background: rgba(147, 145, 145, 0);
-  backdrop-filter: blur(0px);
-}
-
-/* solid navbar state after scrolling past the hero */
-.navbar.scrolled{
-  background: rgba(15, 7, 13, 0.85) !important; /* dark translucent */
-  backdrop-filter: blur(0px);
-}
-
-/* keep navbar visually over the header video */
-body{padding-top:0}
-/*Video play */
-#filter{
-  position: relative;
-  z-index: 1;
-}
-#filter::after{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #FF3688; /* pink overlay color */
-  z-index: 2;
-    opacity: 0.4;
-}
-#head_video{
-  width: 100%;
-  height: 1080px;
-  background-color: lightgray; /*just to see where the video container is*/
-  overflow: hidden;
-  position: relative; /* ensure absolute child positions correctly */
-  margin-top: 0;
-  
-}
-#head_video video{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-/* Hide native big overlay play button */
-video::-webkit-media-controls-overlay-play-button,
-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none !important;
-}
-
-/* Hide small play button inside the controls */
-video::-webkit-media-controls-play-button {
-  display: none !important;
-  -webkit-appearance: none !important;
-}
-
-/* Hide timeline / progress bar and time displays */
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-current-time-display,
-video::-webkit-media-controls-time-remaining-display {
-  display: none !important;
-}
-
-/* hide other control parts */
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-fullscreen-button {
-  display: none !important;
-}
-
-/* hide most controls */
-video::-moz-media-controls {
-  display: none !important;
-}
-
-/*Bootstrap offcanvas overlays the fixed navbar */
-.offcanvas{ 
-  z-index: 3000 !important;
-}
-/* Backdrop above the navbar but below the offcanvas panel */
-.offcanvas-backdrop{
-  z-index: 2900 !important;
-}
-
-/* Section for stacked vector images */
-.vectors-section{
-  background-color: #EFE6DF; 
-  display: flex;
-  flex-direction: column; /* allow margin-top: auto to push #section_3 to bottom */
-  width: 100%;
-  height: auto;
-  padding: 0 0px; 
- 
-  --col-height: 900px; /* reduced desktop height reserved for #columnIMG */
- 
-    padding-bottom: calc(var(--col-height) + var(--section3-height));
-    /* Ensure the section never becomes shorter than the column+cards sum so
-      margin-top: auto on #section_3 can push the cards to the bottom. */
-    min-height: calc(var(--col-height) + var(--section3-height));
-  /* ensure section 2 sits directly below section 1 */
-  margin-top: 0;
-  padding-top: 0;
-  position: relative;
-  z-index: 0; /* sits below children */
-  /* vector images as layered background images */
-  background-image: url('/img/VectorC.png'), url('/img/VectorFace.png'), url('/img/VectorHeart.png');
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  /* VectorC: biggest, placed toward the top; VectorFace: medium and centered;
-     VectorHeart: small and centered inside VectorFace */
-  background-position: center top, center center, center center;
-  background-size: 110% auto, 60% auto, 18% auto;
-}
-
-/* Column layout for images inside Section 2 */
-
-#columnIMG{ position: relative; z-index: 5; height: auto; }
-#columnIMG{
-  position: relative;
-  z-index: 10; /* higher than .vectors-section backgrounds */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  height: 1228px;
-
-}
-
-.imgSizeColumn{
-  width: 139px;
-  min-width: 50px;
-  min-height: 73px;
-  height: 205px;
-}
-
-/* Positioning utilities for images inside #columnIMG */
-#columnIMG{ position: relative; display:flex; flex-direction:column; align-items:center; gap:18px; }
-.pos-top{ align-self: flex-start; }
-.pos-center{ align-self: center; }
-.pos-bottom{ align-self: flex-end; }
-.offset-left{ transform: translateX(-18%); }
-.offset-none{ transform: translateX(0); }
-.offset-right{ transform: translateX(18%); }
-.stagger-1{ margin-top: 0; }
-.stagger-2{ margin-top: 36px; }
-.stagger-3{ margin-top: 72px; }
-
-@media (max-width: 600px){
-  .offset-left, .offset-right{ transform: none; }
-  .stagger-2{ margin-top: 18px; }
-  .stagger-3{ margin-top: 36px; }
-}
-
-@media (max-width: 100%){
-  .column{ max-width: 100%; flex-basis: 100%; }
-  .vectors-section{ margin-top: 0; }
-}
-
-@media (max-width: 600px){
-  #columnIMG img{ width: 80px; max-width: 139px; }
-}
-
-/* responsive background sizing and padding */
-.vectors-container{
-  position: relative;
-  width: min(1200px, 90%);
-  margin: 0 auto;
-  min-height: 120vh;  
-}
-
-/* responsive background sizing and padding */
-@media (max-width: 1200px){
-  /* reduce the upward overlap on narrower screens and scale layers */
-  .vectors-section{
-    background-size: 100% auto, 70% auto, 22% auto;
-    padding: 0px 0;
-    margin-top: 0;
-    padding-top: 0;
-    --col-height: 900px;
-    --section3-height: 520px;
-    padding-bottom: calc(var(--col-height) + var(--section3-height));
-  }
-}
-@media (max-width: 600px){
-
-    /* mobile: smaller overlap so content isn't hidden behind header; enlarge
-      the heart layer proportionally so it's still visible on small screens */
-    .vectors-section{
-      background-size: 90% auto, 80% auto, 28% auto;
-      padding: 0px 0;
-      /* ensure Section 2 sits directly below Section 1 on phones */
-      margin-top: 0;
-      padding-top: 0;
-      /* much smaller reserved heights for mobile devices */
-      --col-height: 80px;
-      --section3-height: 220px;
-      padding-bottom: calc(var(--col-height) + var(--section3-height));
-      min-height: calc(var(--col-height) + var(--section3-height));
-    }
-}
-
-@media (min-width: 901px) and (max-width: 1400px) {
-  /* medium/large screens: slightly less bottom padding */
-  .vectors-section{ padding-bottom: 360px; }
-}
-/* stack images exactly on top of each other, but visible */
-.vectors-container img{
-  display: none; 
-}
-#vectors-note{ display:none; }
-#VectorC{ z-index: 3; opacity: 1; }
-#VectorFace{ z-index: 2; opacity: 0.92; mix-blend-mode: multiply; }
-#VectorHeart{ z-index: 1; opacity: 0.88; mix-blend-mode: multiply; }
-
-/* centered inside the video section */
-#carmenNameLogoBig{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4; /* higher than #filter::after (z-index:2) */
-  display: block;
-  max-width: 70%;
-  max-height: 40vh;
-  width: auto;
-  height: auto;
-  pointer-events: none;
-}
-
-/* Per-image absolute positioning inside the portrait area */
-#columnIMG{ position: relative; }
-/* Use CSS variables for position so we can tweak per-breakpoint while
-   keeping absolute placement on large screens. Widths scale with clamp(). */
-#col-img-1{
-  position: absolute;
-  top: var(--col1-top, 24px);
-  left: var(--col1-left, 48px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-2{
-  position: absolute;
-  top: var(--col2-top, 126px);
-  left: var(--col2-left, 310px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-3{
-  position: absolute;
-  top: var(--col3-top, 400px);
-  left: var(--col3-left, 80px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-4{
-  position: absolute;
-  top: var(--col4-top, 650px);
-  left: var(--col4-left, 370px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-#col-img-5{
-  position: absolute;
-  top: var(--col5-top, 850px);
-  left: var(--col5-left, 80px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-6{
-  position: absolute;
-  top: var(--col6-top, 950px);
-  left: var(--col6-left, 700px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-7{
-  position: absolute;
-  top: var(--col7-top, -10px);
-  left: var(--col7-left, 1000px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-8{
-  position: absolute;
-  top: var(--col8-top, 160px);
-  left: var(--col8-left, 1200px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-9{
-  position: absolute;
-  top: var(--col9-top, 300px);
-  left: var(--col9-left, 1000px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-10{
-  position: absolute;
-  top: var(--col10-top, 500px);
-  left: var(--col10-left, 1220px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-11{
-  position: absolute;
-  top: var(--col11-top, 700px);
-  left: var(--col11-left, 1050px);
-  width: clamp(88px, 6.5vw, 139px);
-  height: 205px !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-pinkText{
-  position: absolute;
-  top: var(--colPinkText-top, 400px);
-  left: var(--colPinkText-left, 570px);
-  /* responsive width: min, preferred, max (keeps proportions and scales) */
-  width: clamp(240px, 35vw, 358px);
-  height: auto !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-#col-img-LogoPos{
-  position: absolute;
-  top: var(--colLogoPos-top, 100px);
-  left: var(--colLogoPos-left, 670px);
-  /* corrected clamp: min 213px, preferred 30vw, max 617px */
-  width: clamp(213px, 30vw, 617px);
-  height: auto !important;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 0px;
-}
-
-/* Specific shape fix for col-img-8: force a consistent rounded shape
-   and ensure the image fills the shape without leaving stray edges. */
-
-
-@media (max-width: 900px){
-  #col-img-1{ top: 16px; left: 20px; width: 88px; }
-}
-
-
-
-/* For medium and smaller screens: keep absolute positions but scale and nudge them
-   so images stay inside the section without overflowing */
-@media (max-width: 1200px) {
-  .vectors-section{ overflow-x: hidden; }
-
-    /* keep #columnIMG relative so absolutely-positioned children are positioned
-      from this container and can be constrained. Preserve a large min-height
-      so the full section remains visible instead of collapsing. */
-    #columnIMG{ position: relative; min-height: 1228px; padding: 28px 0; }
-
-  /* responsive image sizing while preserving absolute positions */
-  [id^="col-img-"]{
-    position: absolute;
-    width: clamp(88px, 9vw, 139px);
-    height: 205px !important;
-    object-fit: cover;
-    margin: 0;
-    transform: none !important;
-    left: auto; /* will be overridden per-image below with percentages */
-  }
-
-  /* approximate percentage positions so images stay inside narrower viewports */
-  #col-img-1{ left: 4%; top: 24px; }
-  #col-img-2{ left: 30%; top: 126px; }
-  #col-img-3{ left: 8%; top: 400px; }
-  #col-img-4{ left: 40%; top: 650px; }
-  #col-img-5{ left: 8%; top: 850px; }
-  #col-img-6{ left: 65%; top: 950px; }
-  #col-img-7{ left: 80%; top: 30px; }
-  #col-img-8{ left: 78%; top: 180px; }
-  #col-img-9{ left: 85%; top: 300px; }
-  #col-img-10{ left: 92%; top: 500px; }
-  #col-img-11{ left: 78%; top: 700px; }
-  /* adjust pinkText and logo for medium screens */
-  #col-img-pinkText{ width: clamp(220px, 38vw, 358px); left: 50%; transform: translateX(-50%); }
-  #col-img-LogoPos{ width: clamp(200px, 36vw, 520px); left: 50%; transform: translateX(-50%); }
-}
-
-@media (max-width: 1200px){
-  [id^="col-img-"]{ width: clamp(72px, 12vw, 120px); }
-  #col-img-1{ left: 3%; top: 16px; }
-  #col-img-2{ left: 28%; top: 126px; }
-  #col-img-7{ left: 70%; }
-  #col-img-8{ left: 78%; }
-  #col-img-9{ left: 82%; }
-  #col-img-10{ left: 88%; }
-  #col-img-11{ left: 70%; }
-  /* tighter sizes for smaller screens */
-  #col-img-pinkText{ width: clamp(180px, 46vw, 320px); left: 50%; transform: translateX(-50%); }
-  #col-img-LogoPos{ width: clamp(160px, 44vw, 400px); left: 50%; transform: translateX(-50%); }
-}
-
-@media (max-width: 600px){
-  [id^="col-img-"]{ width: clamp(60px, 18vw, 100px); }
-  #col-img-1{ left: 6%; top: 12px; }
-  #col-img-2{ left: 40%; top: 110px; }
-  #col-img-7{ left: 55%; }
-  #col-img-8{ left: 60%; }
-  #col-img-9{ left: 68%; }
-  #col-img-10{ left: 76%; }
-  #col-img-11{ left: 55%; }
-  /* mobile: cap widths and center */
-  #col-img-pinkText{ width: clamp(140px, 70vw, 280px); left: 50%; transform: translateX(-50%); }
-  #col-img-LogoPos{ width: clamp(120px, 70vw, 240px); left: 50%; transform: translateX(-50%); }
-}
-
-@media (max-width: 900px) {
-  /* reduce min-height for smaller viewports but keep section visible */
-  #columnIMG{ min-height: 900px; }
-}
-
-@media (max-width: 600px) {
-  /* mobile: still keep enough vertical space to show images */
-  #columnIMG{ min-height: 520px; }
-}
-
-/* Set per-image CSS variable overrides at breakpoints so absolute positions
-   stay proportional and images never overflow the section. Adjust values
-   below if you want slight nudges for a specific screen size. */
-@media (max-width: 1200px) {
-  #col-img-1{ --col1-left: 4%; --col1-top: 24px; }
-  #col-img-2{ --col2-left: 30%; --col2-top: 126px; }
-  #col-img-3{ --col3-left: 8%; --col3-top: 400px; }
-  #col-img-4{ --col4-left: 40%; --col4-top: 650px; }
-  #col-img-5{ --col5-left: 8%; --col5-top: 850px; }
-  #col-img-6{ --col6-left: 65%; --col6-top: 950px; }
-  #col-img-7{ --col7-left: 80%; --col7-top: 30px; }
-  #col-img-8{ --col8-left: 90%; --col8-top: 180px; }
-  #col-img-9{ --col9-left: 85%; --col9-top: 300px; }
-  #col-img-10{ --col10-left: 92%; --col10-top: 500px; }
-  #col-img-11{ --col11-left: 78%; --col11-top: 700px; }
-}
-
-@media (max-width: 900px) {
-  #col-img-1{ --col1-left: 3%; --col1-top: 16px; }
-  #col-img-2{ --col2-left: 28%; --col2-top: 126px; }
-  #col-img-3{ --col3-left: 6%; }
-  #col-img-4{ --col4-left: 38%; }
-  #col-img-5{ --col5-left: 6%; }
-  #col-img-6{ --col6-left: 60%; }
-  #col-img-7{ --col7-left: 70%; }
-  #col-img-8{ --col8-left: 78%; }
-  #col-img-9{ --col9-left: 82%; }
-  #col-img-10{ --col10-left: 88%; }
-  #col-img-11{ --col11-left: 70%; }
-}
-
-@media (max-width: 600px) {
-  #col-img-1{ --col1-left: 6%; --col1-top: 12px; }
-  #col-img-2{ --col2-left: 40%; --col2-top: 110px; }
-  #col-img-3{ --col3-left: 6%; }
-  #col-img-4{ --col4-left: 36%; }
-  #col-img-5{ --col5-left: 6%; }
-  #col-img-6{ --col6-left: 52%; }
-  #col-img-7{ --col7-left: 55%; }
-  #col-img-8{ --col8-left: 60%; }
-  #col-img-9{ --col9-left: 68%; }
-  #col-img-10{ --col10-left: 76%; }
-  #col-img-11{ --col11-left: 55%; }
-}
-
-
-/*Section 2*/
-
-/* Ensure the VectorC logo is positioned and sized appropriately */
-/* section 2 vectors: normal flow below the video, responsive sizing 
-#VectorC {
-  display: block;
-  max-width: 600px;
-  width: 100%;
-  height: 3192;
-  margin: 0 auto 12px;
-  margin-top: -676px;
-  opacity: 0.95;
-}
-#VectorFace {
-  display: block;
-  max-width: 420px;
-  width: 1788px;
-  height: auto;
-  margin: 0 auto 12px;
-  opacity: 0.95;
-}
-#VectorHeart {
-  display: block;
-  
-  width: 794px;
-  height: 706px;
-  margin: 0 auto;
-  opacity: 0.95;
-}
-
-*/
-
-
-/*Section 3 ----- ----- ----- */
-
-
-
-#pensarWhite{
-  display: block;
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  background-image: url('/img/GettyImages-923078808.mp4');
-}
-
-
-.card-video{
-  display: block;
-  width: 100%;
-  aspect-ratio: 9/16; /* portrait (vertical) shape across sizes */
-  height: auto;
-  object-fit: cover;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-
-.vectors-section{ position: relative; }
-/* Place Section 3 at the bottom of Section 2 */
-#section_3{
-  /* Use margin-top: auto to push to the bottom of the flex container */
-  position: relative;
-  width: 100%;
-  margin-top: auto;
-  z-index: 30; /* above section backgrounds and images */
-  padding-top: 12px;
-  padding-bottom: 36px;
-  pointer-events: auto;
-}
-
-/* keep cards centered within the section */
-#section_3 .container{ width: min(1200px, 94%); margin: 0 auto; }
-
-@media (max-width: 900px){
-  #section_3{ padding-bottom: 18px; margin-top: 30px; }
-}
-
-@media (max-width: 600px){
-  /* mobile: keep ample spacing and padding */
-  #section_3{ padding-top: 24px; margin-top: 20px; }
-}
-
-/* Layout for Section 3 cards: force horizontal alignment at the bottom of Section 2 */
-#section_3 .row{
-  display: flex;
-  flex-wrap: nowrap; /* keep cards side-by-side */
-  justify-content: center;
-  gap: 3rem; /* larger gap between cards on desktop */
-}
-
-/* Constrain each column to one third of the row so videos sit next to each other */
-#section_3 .col-12.col-sm-4,
-#section_3 .col-12.col-md-4 {
-  flex: 0 0 33.333%;
-  max-width: 33.333%;
-  display: flex;
-  justify-content: center;
-}
-
-#section_3 .card{ width: 100%; max-width: 420px; border-radius: 0.5rem; overflow: hidden; display: flex; flex-direction: column; align-items: stretch; }
-
-/* make the video fill its card container */
-#section_3 .card .card-video{ width: 100%; height: 100%; display: block; object-fit: cover; }
-
-/* Force a consistent landscape shape for cards and their videos at all sizes */
-#section_3 .card, #section_3 .card .card-video {
-  aspect-ratio: 9/16 !important;
-  height: auto !important;
-}
-
-@media (max-width: 300px){
-  #section_3 .row{ gap: 2rem; }
-}
-
-/* On narrow screens allow wrapping so cards stack vertically */
-@media (max-width: 300px){
-  /* Stack cards vertically on smaller screens to avoid overlap */
-  #section_3 .row{ flex-direction: column; flex-wrap: wrap; gap: 1rem; }
-  #section_3 .col-12.col-sm-4,
-  #section_3 .col-12.col-md-4 { flex: 0 0 100%; max-width: 100%; }
-  #section_3 .card{ max-width: 100%; }
-}
-
-@media (max-width: 768px){
-  /* keep tighter mobile spacing */
-  #section_3 .row{ gap: .75rem; }
-}
-
-@media (max-width: 480px){
-  /* tighter mobile spacing */
-  #section_3 .row{ gap: .75rem; }
-}
-
-/* Phones: force strict vertical stacking so videos appear one after another */
-@media (max-width: 600px) {
-  #section_3 .row{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0.75rem;
-  }
-
-  #section_3 .col-12.col-sm-4,
-  #section_3 .col-12.col-md-4 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    display: block;
-  }
-
-  #section_3 .card{
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 0.75rem;
-  }
-
-  /* ensure cards keep a consistent portrait shape (9:16) on small screens */
-  #section_3 .card.h-100,
-  #section_3 .card{
-    aspect-ratio: 9/16 !important;
-    height: auto !important;
-  }
-
-  /* make the Section 3 container narrower on phones so cards look skinnier */
-    /* allow videos to take more horizontal space on phones so they read as
-      landscape rectangles rather than small squares */
-    #section_3 .container{ width: min(320px, 94%); }
-
-  /* additionally cap card width so they don't span too wide inside the narrower container */
-  /* allow cards to be wider so videos keep a clear landscape shape */
-  #section_3 .card{ max-width: 620px !important; margin-left: auto !important; margin-right: auto !important; }
-
-  /* set video height based on the available container width so the video
-     remains a landscape rectangle without changing its width */
-  /* make the video fill the card exactly and preserve cover behavior */
-  .card-video{
-    width: 100% !important;
-    height: 100% !important;
-    max-height: none !important;
-    aspect-ratio: 9/16 !important;
-    object-fit: cover !important;
-  }
-}
+body { padding-top: 0; background-color: #EFE6DF; } 
+.navbar .nav-link, .navbar .navbar-text, .navbar .navbar-brand { color: var(--nav-text); }/* ensure contrast */
 
 /*Section 4*/
 
@@ -743,8 +10,8 @@ video::-moz-media-controls {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 1098px;
-  padding: 36px 0;
+  height: 900px;
+  padding: 100px 0;
   color: inherit;
 }
 
@@ -754,28 +21,74 @@ video::-moz-media-controls {
   max-width: 600px;
   height: auto;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 #vectorCarmenImage{
   display: block; /* keep it a normal replaced element, not a flex container */
   width: 100%;
-  max-width: 100%;
-  height: auto; /* let width control the height */
+  height: auto; 
   margin: 0 auto;
   object-fit: contain;
 }
 
-/* Small-screen adjustments for Section 4: shorten vertical space */
+/* Small-screen adjustments for Section 4 */
 @media (max-width: 600px) {
   #section_4_Genero{
-    height: auto;           /* let content determine height */
-    max-height: 920px;      /* cap height so section stays short */
-    padding: 18px 0;        /* reduce vertical padding */
-    overflow: hidden;       /* trim any overflowing artwork */
+    height: auto;          
+    max-height: 1020px;      
+    padding: 18px 0;        
+    overflow: visible;     
   }
 
   /* reduce image spacing and scale down images inside the section */
-  #generoImage{ padding-bottom: 12px; max-width: 90%; }
-  #vectorCarmenImage{ max-width: 320px; }
+ 
+  #generoImage{ padding-bottom: 10px; max-width: 90%; position: relative; z-index: 20; display: block; margin-top: 50px; }
+  #vectorCarmenImage{ max-width: 100%; position: relative; z-index: 20; display: block; margin-top: -10px; }
 }
+
+/* section 5*/
+
+#section_5{
+  background-color: #FF3688;
+  width: 100%;
+  height: 960px;
+  position: relative; /* allow absolutely positioned children to center */
+  padding: 36px 0;
+  color: inherit;
+ /* min-height: 600px; */
+}
+
+#section_5 .container{
+  width: min(1200px, 94%);
+  height: 100%;
+  margin: 0 auto;
+}
+
+
+#section_6{
+  background-color: #EFE6DF;
+  width: 100%;
+  height: 3000px;
+  padding: 36px 0;
+  color: inherit;
+}
+
+#section_6 .container{
+  width: min(1200px, 94%);
+  margin: 0 auto;
+}
+
+#section_7{
+  background-color: #0000000f;
+  width: 100%;
+  height: 1200px;
+  padding: 36px 0;
+  color: inherit;
+}
+
+#section_7 .container{
+  width: min(1200px, 94%);
+  margin: 0 auto;
+}
+

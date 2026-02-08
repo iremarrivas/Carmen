@@ -1,0 +1,135 @@
+/* Centered image inside Section 5 */
+#section_Img{
+  position: relative;
+  background-color: #FF3688;
+  width: 100%;
+  height: 1550px;
+  padding: 36px 0;
+  color: inherit;
+}
+#section_Img .container{
+  width: min(1200px, 94%);
+  height: 100%;
+  margin: 0 auto;
+}
+
+
+#title_Dra{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 20px; 
+}
+
+#title_Dra img{
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+
+@media (max-width: 768px) {
+  #title_Dra img{ width: 90%; }
+  #title_Dra{ width: 100%; }
+}
+
+@media (max-width: 480px) {
+  #title_Dra {
+    width: 100%;
+  }
+
+  #title_Dra img {
+    width: 100%;
+  }
+}
+
+#licencias_Sec5 {
+  position: relative;
+  top: 5%;
+}
+
+#licencias_Sec5 img {
+  position: relative; /* o absolute */
+  
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+
+/*------------------*/
+
+#miembros {
+  position: relative;
+  top: 15%;
+  width: 100%;
+}
+
+#miembros img {
+  position: relative; /* o absolute */
+  width: 25%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  #miembros img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  #miembros img {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  #miembros img {
+    width: 80%;
+  }
+}
+
+#columnTopImg {
+  position: absolute; /* o relative, fixed, sticky */
+  width: 100%;
+  height: 150px;
+  top: var(--columnTopImg-top, 75%);
+  left: 0%;
+}
+
+#columnTopImg img {
+  position: relative; /* o absolute */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  #columnTopImg img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  #columnTopImg img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* mobile: images full width, keep 4 columns (switch to 2 under 420px) */
+  #columnTopImg img { width: 100%; }
+
+  #columnTopImg {
+    position: relative;
+    top: auto;
+    margin-top: 10%;
+  }
+
+}

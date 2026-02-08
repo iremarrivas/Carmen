@@ -1,0 +1,116 @@
+#carrusel { 
+    width: 100%; 
+    overflow: hidden;
+    position: relative; /* Asegurar que se pueda posicionar */
+    top: 100px; /* Mover el carrusel hacia abajo */
+}
+
+#swiper-final { width: 100%; height: 300px; }
+
+.swiper-slide {
+  width: 100% !important; /* Tamaño fijo en escritorio */
+height: 50% !important; /* Tamaño fijo en escritorio */
+}
+.swiper-slide img {
+  width: 50% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* Swiper root used in HTML */
+.swiper-circular { width: 100%; margin: 0 auto; padding: 40px 0; }
+
+/* Allow Swiper to transform the wrapper — full width so size changes propagate */
+.swiper-circular .swiper-wrapper { display: flex; align-items: center; width: 50%; }
+
+
+.swiper-circular .swiper-slide {
+    flex: 0 0 auto !important;
+    
+    background: transparent;
+}
+
+
+
+/* Opacity staging for coverflow look (non-size affecting) */
+.swiper-slide { opacity: 0.15; }
+.swiper-slide-active { opacity: 1; }
+.swiper-slide-prev, .swiper-slide-next { opacity: 0.6; }
+
+/* Breakpoints responsivos */
+@media (max-width: 1024px) {
+    .swiper-circular .swiper-slide {
+        width: 220px !important;
+        height: 220px !important;
+    }
+}
+
+
+
+/* Ajustar el height de los slides y asegurar que se apliquen los cambios */
+@media (max-width: 768px) {
+    #swiper-final {
+        height: auto !important; /* Permitir que el contenedor ajuste su altura automáticamente */
+    }
+
+    .swiper-circular .swiper-slide {
+        height: 70vw !important; /* Incrementar la altura al 70% del ancho de la pantalla */
+    }
+
+    .swiper-circular .swiper-slide img {
+        height: 100% !important; /* Imagen ocupa toda la altura del slide */
+    }
+}
+
+@media (max-width: 420px) {
+    #swiper-final {
+        height: auto !important; /* Permitir que el contenedor ajuste su altura automáticamente */
+    }
+
+    .swiper-circular .swiper-slide {
+        height: 500px !important; /* Incrementar la altura al 80% del ancho de la pantalla */
+    }
+
+    .swiper-circular .swiper-slide img {
+        height: 100% !important; /* Imagen ocupa toda la altura del slide */
+    }
+}
+
+
+.swiper-pagination-bullet-active {
+    background-color:  #FF3688 /* Cambia el color aquí */
+}
+#title_impacto {
+  position: relative;
+  top: 50px;
+  width: 100%;
+  left: 0%;
+}
+#title_impacto img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin-left: 0%;
+ 
+  
+}
+
+@media (max-width: 768px) {
+  #title_impacto img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-left: 0%;
+  }
+}
+
+@media (max-width: 420px) {
+  #title_impacto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 0%;
+  }
+}

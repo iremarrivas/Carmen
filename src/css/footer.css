@@ -1,0 +1,173 @@
+.form {
+  max-width: 80%;
+  margin: auto;
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+  padding-top: 100px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 4rem;
+}
+
+.field label {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: #777;
+  display: block;
+  margin-bottom: -2px; /* reduce gap to input */
+}
+
+
+.field input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #555;
+  padding: 0.1rem 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.field input:focus {
+  outline: none;
+  border-bottom-color: #ff2a7f;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 3rem 0;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox span {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ff2a7f;
+  display: inline-block;
+}
+
+.checkbox input:checked + span {
+  background: #ff2a7f;
+}
+
+.checkbox{
+  width: 100%;
+}
+
+.checkbox > span{ flex: 0 0 18px; align-self: flex-end; }
+
+.checkbox > p{
+  margin: 0; 
+  text-align: left;
+  color: #ccc;
+  flex: 1 1 auto; 
+  line-height: 1.25;
+}
+
+/* Boton */
+.submit {
+  width: 50%;
+  margin-left: 50%;
+  padding: 1.25rem;
+  background: none;
+  border: 1px solid #ff2a7f;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+.submit span {
+  color: #ff2a7f;
+  margin-right: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#uneteImg{
+  display: block;
+  width: 15%;
+  padding-bottom: 50px;
+  top: 202%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#footerCamenImg{
+  display: block;
+  width: 100%;
+  
+  height: auto;
+  margin: 0 auto;
+}
+
+#section_7 > div:first-child img{
+  display: block;
+  margin-top: 48px; 
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+
+@media (max-width: 600px){
+  #section_7 > div:first-child img{ margin-top: 24px; }
+}
+
+/* Footer video as background with dark overlay */
+#section_7{
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+#section_7 video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+#section_7::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000000;
+  opacity: 0.8; /* black filter over the video */
+  z-index: 2;
+  pointer-events: none;
+}
+/* Ensure visible content sits above the overlay */
+#section_7 > div,
+#section_7 form{
+  position: relative;
+  z-index: 3;
+}
+
+/* Error message styling for footer form validation */
+.error-message{
+  color: #ffb3c8;
+  font-size: 0.95rem;
+  margin-top: 6px;
+  min-height: 1.1em;
+}
+
+/* input visual for invalid state */
+input[aria-invalid="true"]{
+  outline: 2px solid rgba(255,42,127,0.18);
+}

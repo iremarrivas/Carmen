@@ -1,0 +1,87 @@
+/*Section 1 video styles */
+#filter{
+  position: relative;
+  z-index: 1;
+}
+#filter::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FF3688; /* pink overlay color */
+  z-index: 2;
+  opacity: 0.43;
+}
+#head_video{
+  width: 100%;
+  height: 1080px;
+  background-color: lightgray; /* to see the container */
+  overflow: hidden;
+  position: relative;
+  margin-top: 0;
+}
+#head_video video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* centered inside the video section */
+#carmenNameLogoBig{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: block;
+  max-width: 70%;
+  max-height: 40vh;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Hide native big overlay play button */
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Hide small play button inside the controls */
+video::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Hide timeline / progress bar and time displays */
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+}
+
+/* hide other control parts */
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+/* hide most controls */
+video::-moz-media-controls {
+  display: none !important;
+}
+
+.offcanvas{ 
+  z-index: 3000 !important;
+}
+/* Backdrop above the navbar but below the offcanvas panel */
+.offcanvas-backdrop{
+  z-index: 2900 !important;
+}

@@ -1,0 +1,156 @@
+
+/* 
+   Mask Face
+*/
+#maskFace {
+  position: absolute;
+  top: 25%;       /* altura inicial */
+  left: 50%;      /* centrado horizontal */
+  transform: translateX(-50%);
+  width: 30%;     /* tamaño inicial */
+  max-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+#maskFace img,
+#maskFace svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 
+   Pink Faces - Izquierda
+ */
+.pinkFaces {
+  position: absolute;
+  left: 0%;       /* pegado a la izquierda */
+  top: 35%;
+  width: 10%;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.pinkFaces img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 
+   Pink Faces - Derecha
+*/
+.pinkFacesRight {
+  position: absolute;
+  right: 0%;      
+  top: 35%;
+  width: 10%;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.pinkFacesRight img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 
+   Media Queries – Tablet
+ */
+@media (max-width: 768px) {
+  /* Mask Face */
+  #maskFace {
+    width: 50%;
+    max-height: 40%;
+    top: 45%;           /* baja un poco */
+  }
+
+  /* Pink Faces Izquierda */
+  .pinkFaces {
+    top: 55%;
+    left: 0%;
+    width: 20%;
+  }
+
+  /* Pink Faces Derecha */
+  .pinkFacesRight {
+    top: 55%;
+    right: 0%;
+    width: 20%;
+  }
+}
+
+/* 
+   Media Queries – Mobile
+*/
+@media (max-width: 480px) {
+  /* Mask Face */
+  #maskFace {
+    width: 70%;
+    max-height: 30%;
+    top: 30%;           /* baja más en móvil */
+  }
+
+  /* Pink Faces Izquierda */
+  .pinkFaces {
+    top: 30%;
+    left: 0%;
+    width: 30%;
+  }
+
+  /* Pink Faces Derecha */
+  .pinkFacesRight {
+    top: 30%;
+    right: 0%;
+    width: 30%;
+  }
+}
+/* Letter / Title positioning and responsive sizing */
+#letter_Carme_Sec5 {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#letter_Carme_Sec5 img {
+  display: block;
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  #letter_Carme_Sec5 { top: 25%; }
+  #letter_Carme_Sec5 img { width: clamp(200px, 35vw, 400px); }
+}
+
+@media (max-width: 768px) {
+  #letter_Carme_Sec5 { top: 25%; }
+  #letter_Carme_Sec5 img { width: clamp(140px, 40vw, 300px); }
+}
+
+@media (max-width: 480px) {
+  /* center the letter on very small screens and make it larger responsively */
+  #letter_Carme_Sec5 {
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  #letter_Carme_Sec5 img {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(220px, 80vw, 600px);
+  }
+}
+
+

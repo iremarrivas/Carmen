@@ -1,0 +1,260 @@
+/* 
+   Section 3 – Cards
+ */
+
+.section-3 {
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+  z-index: 30;
+  padding: 12px 0 36px;
+}
+
+.section-3__container {
+  width: min(1200px, 94%);
+  margin: 0 auto;
+}
+
+.section-3__row {
+  display: flex;
+  justify-content: center;
+  gap: var(--card-gap);
+}
+
+/* 
+   Card component
+ */
+
+.card {
+
+  --card-lift: var(--card-default-lift, 0px);
+  --card-radius: var(--card-default-radius, 0.7rem);
+  --card-video-fit: var(--card-default-video-fit, cover);
+  transform: translateY(calc(-1 * var(--card-lift))) translateZ(0);
+  
+  transition: transform 200ms ease, filter 200ms ease;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+/* Card variants */
+.card--hero   { --card-lift: 90px; }
+.card--mid    { --card-lift: 20px; --card-radius: 1rem; --card-video-fit: cover; --card-filter: saturate(1.05); }
+.card--low    { --card-lift: 8px;  --card-radius: 0.4rem; --card-filter: grayscale(0.12); }
+
+/* 
+   Card video
+ */
+
+.card-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  
+  object-fit: var(--card-video-fit);
+  filter: var(--card-filter);
+}
+
+/* Centered image overlay inside a card */
+.card-center-img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 7; /* above video and overlay */
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*Card icon position*/
+  .card-center-Icon{
+    position: absolute;
+    left: 50%;
+    top: 20%;/* slightly below the centered icon */
+    transform: translateX(-50%);
+    z-index: 8;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-center-Icon img{
+    display: block;
+    width: clamp(20px, 4vw, 48px);
+    height: auto;
+  }
+
+  @media (max-width: 708px){
+    .card-center-Icon{ top: 20%; }
+    .card-center-Icon img{ width: 100%; }
+  }
+
+.card-center-img img{
+  display: block;
+  
+  height: auto;
+}
+
+/* Bottom image inside the card, centered at the base */
+.card-bottom-img{
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  width: 65%;
+  
+  transform: translateX(-50%);
+  z-index: 7; /* sit above overlay and centered icon */
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-bottom-img img{
+  display: block;
+  width: 100%;
+  height: auto;
+
+}
+
+@media (max-width: 708px){
+  .card-bottom-img{ bottom: 80px; }
+  .card-bottom-img img{ width: 100%; }
+}
+
+
+/* Top image inside the card, centered near the top */
+.card-top-img{
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 30%;
+  transform: translateX(-50%);
+  z-index: 8; /* sit above center and bottom icons */
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-top-img img{
+  display: block;
+  width: 100%;
+  height: auto;
+ 
+}
+
+
+/*cars video icon image*/
+.card.has-center .card-center-img{
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+/* Color overlay over card videos  */
+.card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--card-overlay-color, rgba(255,54,136,0.18));
+  opacity: var(--card-overlay-opacity, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.card > *:not(.card-video):not(.card-center-img):not(.card-bottom-img):not(.card-top-img){
+  position: relative;
+  z-index: 6;
+}
+
+/* Per-card overlay colors */
+#card-1 {
+  --card-overlay-color: rgba(0, 0, 0, 0.55); /* black  */
+  --card-overlay-opacity: 1;
+}
+
+#card-2 {
+  /* 40% opacity overlay (alpha = 0.4). If you meant "40% transparent"
+     (i.e. 40% see-through) use alpha = 0.6 instead. */
+  --card-overlay-color: rgba(222, 0, 71, 0.4);
+  --card-overlay-opacity: 1;
+}
+
+#card-3 {
+  --card-overlay-color: rgba(0, 0, 0, 0.25); /* purple */
+  --card-overlay-opacity: 1;
+}
+
+/* 
+   Layout – Desktop
+*/
+
+@media (min-width: 769px) {
+  .section-3__row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  
+  /* Desktop-only per-card adjustments */
+  #card-1 { --card-lift: 100px; }
+  #card-3 { --card-lift: 80px; }
+}
+
+/* 
+   Layout – Mobile
+*/
+
+@media (max-width: 708px) {
+  .section-3__row {
+    flex-direction: column;
+    gap: var(--card-gap-mobile);
+  }
+
+  .section-3__col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    --card-lift: calc(var(--card-lift) * 0.5);
+    margin-bottom: 0.75rem;
+  }
+
+  /* Make card and video stretch to avoid empty space on small screens */
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: auto; /* allow height from content */
+  }
+
+  .card .card-video,
+  .card-video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: var(--card-video-fit);
+}
+
+  /* Keep cards taller on small screens (use variable from variables.css) 
+  .card {
+    min-height: var(--section3-height);
+  }*/
+}
+
+/* Override Bootstrap's .h-100 on small screens so min-height applies */
+@media (max-width: 768px) {
+  .card {
+    /* allow min-height to take effect */
+    min-height: var(--section3-height);
+  }
+}
+
+
+/* per-card lift values are scoped to desktop above */
+
