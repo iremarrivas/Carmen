@@ -61,18 +61,42 @@
   background: #ff2a7f;
 }
 
-.checkbox{
-  width: 100%;
+.checkbox {
+  display: flex;
+  align-items: center; /* Vertically centers both items */
+  gap: 10px;           /* Adds a clean space between span and p */
 }
 
-.checkbox > span{ flex: 0 0 18px; align-self: flex-end; }
+.checkbox > span{  
+  display: block; 
+}
 
-.checkbox > p{
-  margin: 0; 
-  text-align: left;
+@media (max-width: 1500px) {
+  .checkbox > span{  
+  display: block;
+transform: translateX(650px); 
+  }
+}
+
+@media (max-width: 992px) {
+  .checkbox > span{  
+  display: block;
+transform: translateX(300px); 
+}
+}
+@media (max-width: 768px) {
+  .checkbox > span{  
+  display: block;
+transform: translateX(15px);
+  }
+}
+.checkbox > p {
+  margin: 0;
   color: #ccc;
-  flex: 1 1 auto; 
-  line-height: 1.25;
+  line-height: 1.5;
+  
+  margin-left: auto; 
+  text-align: right;
 }
 
 /* Boton */

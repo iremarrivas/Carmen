@@ -180,8 +180,7 @@
 }
 
 #card-2 {
-  /* 40% opacity overlay (alpha = 0.4). If you meant "40% transparent"
-     (i.e. 40% see-through) use alpha = 0.6 instead. */
+  /* 40% opacity overlay "40% transparent" */
   --card-overlay-color: rgba(222, 0, 71, 0.4);
   --card-overlay-opacity: 1;
 }
@@ -231,7 +230,7 @@
   .card {
     display: flex;
     flex-direction: column;
-    height: auto; /* allow height from content */
+    height: auto; 
   }
 
   .card .card-video,
@@ -239,15 +238,10 @@
   width: 100%;
   aspect-ratio: 9 / 16;
   object-fit: var(--card-video-fit);
+  }
 }
 
-  /* Keep cards taller on small screens (use variable from variables.css) 
-  .card {
-    min-height: var(--section3-height);
-  }*/
-}
-
-/* Override Bootstrap's .h-100 on small screens so min-height applies */
+/**/
 @media (max-width: 768px) {
   .card {
     /* allow min-height to take effect */
@@ -258,3 +252,53 @@
 
 /* per-card lift values are scoped to desktop above */
 
+@media (max-width: 1200px) {
+  .section-3__container {
+    width: 90%;
+  }
+  .card {
+    --card-lift: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+    #section_3{
+    transform: translateY(-70px); 
+  }
+  .section-3__row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .card {
+    --card-lift: 40px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+  #section_3 {
+    transform: translateY(-50px); 
+  }
+  .section-3__container {
+    width: 95%;
+  }
+  .card {
+    --card-lift: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .section-3__row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card {
+    --card-lift: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .card-video {
+    aspect-ratio: 16 / 9;
+  }
+}

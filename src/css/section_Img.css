@@ -47,19 +47,34 @@
 }
 
 #licencias_Sec5 {
-  position: relative;
   top: 5%;
-}
-
-#licencias_Sec5 img {
-  position: relative; /* o absolute */
-  
-  width: 50%;
-  height: auto;
+  width: 100%;
   margin: 0 auto;
-  display: block;
 }
 
+@media (max-width: 1500px) and (min-width: 993px) {
+  
+  #licenciasImg {
+   width: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  #licenciasImg {
+ 
+     width: 80%;
+    transform: translateX(70px);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #licenciasImg {
+   
+    width: 90%;
+    transform: translateX(40px);
+  }
+}
 
 /*------------------*/
 

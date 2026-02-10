@@ -3,6 +3,44 @@ body { padding-top: 0; background-color: #EFE6DF; }
 
 /*Section 4*/
 
+#section_4 {
+  background-color: #EFE6DF;
+  width: 100%;
+}
+
+#generoImage{
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 768px) {
+  
+#section_4 {
+    height:500px;          
+          
+    padding: 18px 0;        
+    overflow: visible;     
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+ #section_4 {
+    height:200px;           
+    padding: 18px 0;        
+    overflow: visible; 
+    transform: translateY(-100px);
+    
+  }
+}
+
+
+
 #section_4_Genero {
   background-color: #EFE6DF;
   /* vertical gradient from the original beige to the pink */
@@ -15,14 +53,9 @@ body { padding-top: 0; background-color: #EFE6DF; }
   color: inherit;
 }
 
-#generoImage{
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
+
+
+
 
 #vectorCarmenImage{
   display: block; /* keep it a normal replaced element, not a flex container */
@@ -30,6 +63,14 @@ body { padding-top: 0; background-color: #EFE6DF; }
   height: auto; 
   margin: 0 auto;
   object-fit: contain;
+}
+@media (min-width: 769px) and (max-width: 992px) {
+ #section_4_Genero {
+    height:550px;           
+  }
+  #vectorCarmenImage{
+   transform: translateY(-100px); 
+  }
 }
 
 /* Small-screen adjustments for Section 4 */
@@ -75,7 +116,7 @@ body { padding-top: 0; background-color: #EFE6DF; }
 }
 
 #section_6 .container{
-  width: min(1200px, 94%);
+  width: 100%;
   margin: 0 auto;
 }
 

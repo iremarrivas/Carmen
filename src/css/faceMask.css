@@ -1,4 +1,3 @@
-
 /* 
    Mask Face
 */
@@ -110,6 +109,7 @@
     width: 30%;
   }
 }
+
 /* Letter / Title positioning and responsive sizing */
 #letter_Carme_Sec5 {
   position: absolute;
@@ -133,16 +133,25 @@
 }
 
 @media (max-width: 768px) {
-  #letter_Carme_Sec5 { top: 25%; }
-  #letter_Carme_Sec5 img { width: clamp(140px, 40vw, 300px); }
+  
+  #letter_Carme_Sec5 img { 
+    width: clamp(140px, 40vw, 300px); 
+    transform: translateX(-10%) translateY(50px);
+  }
 }
+@media (min-width: 769px) and (max-width: 992px) {
+  #letter_Carme_Sec5 {
+    transform: translateX(-50%) translateY(-120px); /* Adjust for medium-large screens */
+  }
+}
+
 
 @media (max-width: 480px) {
   /* center the letter on very small screens and make it larger responsively */
   #letter_Carme_Sec5 {
-    top: 55%;
+   
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
     width: 100%;
   }
   #letter_Carme_Sec5 img {
@@ -152,5 +161,15 @@
     width: clamp(220px, 80vw, 600px);
   }
 }
+
+/* Adjust position of #letter_Carme_Sec5 on larger screens */
+@media (min-width: 1024px) {
+    #letter_Carme_Sec5 {
+       
+      transform: translateX(-50%) translateY(-80%);
+    }
+}
+
+
 
 

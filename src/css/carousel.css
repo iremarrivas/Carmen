@@ -1,15 +1,10 @@
-#carrusel { 
-    width: 100%; 
-    overflow: hidden;
-    position: relative; /* Asegurar que se pueda posicionar */
-    top: 100px; /* Mover el carrusel hacia abajo */
-}
+#swiper-final { width: 100%; height: 400px; overflow: hidden; }
 
-#swiper-final { width: 100%; height: 300px; }
-
+/*imagens inside the carusel sizes*/
 .swiper-slide {
-  width: 100% !important; /* Tamaño fijo en escritorio */
-height: 50% !important; /* Tamaño fijo en escritorio */
+width: 100% !important;
+height: 50% !important; 
+
 }
 .swiper-slide img {
   width: 50% !important;
@@ -19,7 +14,8 @@ height: 50% !important; /* Tamaño fijo en escritorio */
   border-radius: 12px;
 }
 
-/* Swiper root used in HTML */
+
+/* Swiper root */
 .swiper-circular { width: 100%; margin: 0 auto; padding: 40px 0; }
 
 /* Allow Swiper to transform the wrapper — full width so size changes propagate */
@@ -39,60 +35,84 @@ height: 50% !important; /* Tamaño fijo en escritorio */
 .swiper-slide-active { opacity: 1; }
 .swiper-slide-prev, .swiper-slide-next { opacity: 0.6; }
 
-/* Breakpoints responsivos */
-@media (max-width: 1024px) {
-    .swiper-circular .swiper-slide {
-        width: 220px !important;
-        height: 220px !important;
+
+
+ @media (min-width: 1024px) {
+    #swiper-final .swiper-slide {
+        width: calc(50% - 20px); 
     }
 }
 
 
-
-/* Ajustar el height de los slides y asegurar que se apliquen los cambios */
 @media (max-width: 768px) {
-    #swiper-final {
-        height: auto !important; /* Permitir que el contenedor ajuste su altura automáticamente */
+    #swiper-final .swiper-slide {
+        height: auto !important;
+        width: 100%; 
     }
 
+    #swiper-final  {
+        width: 100% !important; 
+        height: 400px !important;
+       
+    }
+
+}
+
+  .swiper-slide img {
+        width: 50% !important; 
+        height: 300px !important;
+
+}
+   
     .swiper-circular .swiper-slide {
-        height: 70vw !important; /* Incrementar la altura al 70% del ancho de la pantalla */
+        height: 70vw !important;
+       
+       
     }
 
     .swiper-circular .swiper-slide img {
-        height: 100% !important; /* Imagen ocupa toda la altura del slide */
+        height: 100% !important;
     }
-}
+
 
 @media (max-width: 420px) {
-    #swiper-final {
-        height: auto !important; /* Permitir que el contenedor ajuste su altura automáticamente */
+    #swiper-final .swiper-slide {
+        height: auto !important;
+        width: 100%; 
+         margin-bottom: 20px;
     }
 
     .swiper-circular .swiper-slide {
-        height: 500px !important; /* Incrementar la altura al 80% del ancho de la pantalla */
+        height: 500px !important;
+         width: 100%;
     }
 
     .swiper-circular .swiper-slide img {
-        height: 100% !important; /* Imagen ocupa toda la altura del slide */
+        height: 100%; /* Corrected syntax error */
     }
-}
 
+
+}
 
 .swiper-pagination-bullet-active {
-    background-color:  #FF3688 /* Cambia el color aquí */
+    background-color:  #FF3688 /*the pagination dots color*/
 }
 #title_impacto {
-  position: relative;
+  
   top: 50px;
   width: 100%;
-  left: 0%;
+ 
+}
+@media (max-width: 420px) {
+  #title_impacto {
+    transform: translateX(8%);
+  }
 }
 #title_impacto img {
   width: 60%;
   height: auto;
   display: block;
-  margin-left: 0%;
+  transform: translateX(-8%);
  
   
 }
@@ -101,16 +121,153 @@ height: 50% !important; /* Tamaño fijo en escritorio */
   #title_impacto img {
     width: 80%;
     height: auto;
-    display: block;
-    margin-left: 0%;
   }
 }
 
-@media (max-width: 420px) {
-  #title_impacto img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-left: 0%;
+
+
+@media (max-width: 430px) {
+  #new-carousel {
+    display: none !important; 
+  }
+}   
+
+
+@media (max-width: 700px) {
+  #new-carousel {
+    display: block !important; /* Show new-carousel on small screens */
   }
 }
+
+@media (min-width: 701px) {
+  #new-carousel {
+    display: none !important;
+  }
+}
+
+#swiper-final,
+#new-carousel {
+  display: none; /* Ensure both carousels are visible */
+}
+
+@media (max-width: 700px) {
+  #swiper-final {
+    display: none; /* Hide the original carousel on small screens */
+  }
+
+  #new-carousel {
+    display: block; /* Show the new carousel on small screens */
+  }
+}
+
+@media (min-width: 701px) {
+  #swiper-final {
+    display: block; 
+  }
+
+  
+}
+
+/*Images in the carousel Section */
+
+#maskFaceCarousel {
+  position: relative;
+  top: 9%;
+  width: 100%;
+}
+#CarouselImgMask {
+  display: block;
+  width: 30%;
+  height: auto;
+  /*width: 47.6%;
+  height: 62.7%;*/
+  transform: translateX(50px);
+}
+
+@media (max-width: 468px) {
+  #CarouselImgMask {
+    width: 13.4%;
+    height: 18.5%;
+   
+  }
+}
+
+#maskFaceCarousel2 {
+  position: relative;
+  top: 9%;
+  width: 100%;
+
+ 
+}
+
+#carouselImg2{
+    display: block;
+    width: 50%;
+    height: auto;
+    /*width: 47.6%;
+    height: 62.7%;*/
+    transform: translateX(850px) translateY(-520px);
+}
+
+@media (max-width: 1200px) {
+  #carouselImg2 {
+    transform: translateX(200px) translateY(-150px); /* Adjust for large screens */
+  }
+}
+
+@media (max-width: 992px) {
+  #carouselImg2 {
+    transform: translateX(100px) translateY(-100px); /* Adjust for medium-large screens */
+  }
+}
+
+@media (max-width: 768px) {
+  body #carouselImg2 {
+    transform: translateX(-50px) translateY(-50px) !important; /* Force adjustment for medium screens */
+  }
+}
+
+@media (max-width: 468px) {
+  #carouselImg2 {
+    transform: translateX(0px) translateY(0px); /* Align for small screens */
+  }
+}
+
+/* Responsive adjustments for #carouselImg2 based on standard screen sizes */
+
+/* Extra Large Screens (Desktops) */
+@media (min-width: 1200px) {
+  #carouselImg2 {
+    transform: translateX(90%) translateY(-430px); /* Position for desktops */
+  }
+}
+
+/* Large Screens (Laptops) */
+/*@media (min-width: 892px) and (max-width: 1199px) {
+  #maskFaceCarousel2 {
+    transform: translateX(500px) translateY(-100px); Position for laptops 
+  }
+}
+*/
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  #maskFaceCarousel2 {
+    transform: translateX(300px) translateY(-150px); /* Position for tablets */
+  }
+}
+
+/* Extra Small Screens (Small Phones) */
+@media (max-width: 575px) {
+  #maskFaceCarousel2{
+    transform: translateX(55%) translateY(-90px); /* Position for small phones */
+  }
+}
+
+@media (max-width: 575px) {
+  #title_impacto {
+    transform: translateX(8%); /* Center horizontally */
+    text-align: center; /* Ensure text is centered */
+  }
+}
+
+/* Ensured proper closing of media queries */

@@ -126,10 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Carousel initialization (if using Swiper for the carousel in section 6)
+const swiperContainer = document.querySelector('#swiper-final .swiper-wrapper');
 
-// Esperamos a que todo el contenido cargue
 window.addEventListener('load', function() {
   // Verificamos que Swiper existe para evitar errores
+  
   if (typeof Swiper !== 'undefined') {
     const swiper = new Swiper('#swiper-final', {
       loop: true,
@@ -148,7 +149,24 @@ window.addEventListener('load', function() {
         modifier: 1,
         slideShadows: false, // Desactivado para que la transparencia luzca limpia
       },
-      // Forzar renderizado
+	   breakpoints: {
+		
+		748: {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		coverflowEffect: {
+            stretch: 300, // Adjust stretch for small screens
+        },
+		},
+    	468: {
+        slidesPerView: 1,
+        spaceBetween: 80,
+        coverflowEffect: {
+            stretch: 200, // Adjust stretch for small screens
+        },
+		},
+	},
+		// renderizado
       observer: true,
       observeParents: true,
       pagination: {
@@ -168,4 +186,33 @@ window.addEventListener('load', function() {
   } else {
     console.error("Swiper no está cargado correctamente.");
   }
+});
+
+// Enhanced Swiper initialization for new-carousel
+document.addEventListener('DOMContentLoaded', () => {
+  const newSwiper = new Swiper('#new-carousel', {
+    loop: true,
+    slidesPerView: 1,
+	speed: 2500, 
+    autoplay: {
+      delay: 1500, // Slide changes every 2 seconds
+      disableOnInteraction: false, // Continue autoplay after user interaction
+    },
+	effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 150, // Imágenes más juntas (reduce el gap)
+        depth: 200,   // Empuja las imágenes al fondo
+        modifier: 1,
+        slideShadows: false, // Desactivado para que la transparencia luzca limpia
+      },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 });
