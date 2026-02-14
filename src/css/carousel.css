@@ -98,52 +98,13 @@ height: 50% !important;
     background-color:  #FF3688 /*the pagination dots color*/
 }
 #title_impacto {
-  
-  top: 50px;
   width: 100%;
+  text-transform: uppercase;
+  color: #FF3688;
+  line-height: 1;
  
 }
-@media (max-width: 420px) {
-  #title_impacto {
-    transform: translateX(8%);
-  }
-}
-#title_impacto img {
-  width: 60%;
-  height: auto;
-  display: block;
-  transform: translateX(-8%);
- 
-  
-}
 
-@media (max-width: 768px) {
-  #title_impacto img {
-    width: 80%;
-    height: auto;
-  }
-}
-
-
-
-@media (max-width: 430px) {
-  #new-carousel {
-    display: none !important; 
-  }
-}   
-
-
-@media (max-width: 700px) {
-  #new-carousel {
-    display: block !important; /* Show new-carousel on small screens */
-  }
-}
-
-@media (min-width: 701px) {
-  #new-carousel {
-    display: none !important;
-  }
-}
 
 #swiper-final,
 #new-carousel {
@@ -174,7 +135,9 @@ height: 50% !important;
   position: relative;
   top: 9%;
   width: 100%;
+
 }
+
 #CarouselImgMask {
   display: block;
   width: 30%;
@@ -184,18 +147,23 @@ height: 50% !important;
   transform: translateX(50px);
 }
 
-@media (max-width: 468px) {
-  #CarouselImgMask {
-    width: 13.4%;
-    height: 18.5%;
-   
-  }
-}
+
 
 #maskFaceCarousel2 {
   position: relative;
-  top: 9%;
-  width: 100%;
+  top: 0%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF3688;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 130px;
+  letter-spacing: -1px;
+  line-height: 1;
+  left: 40%;
+  top: -8%;
 
  
 }
@@ -211,7 +179,7 @@ height: 50% !important;
 
 @media (max-width: 1200px) {
   #carouselImg2 {
-    transform: translateX(200px) translateY(-150px); /* Adjust for large screens */
+    transform: translateX(90%) translateY(-300px); /* Adjust for large screens */
   }
 }
 
@@ -222,15 +190,19 @@ height: 50% !important;
 }
 
 @media (max-width: 768px) {
-  body #carouselImg2 {
-    transform: translateX(-50px) translateY(-50px) !important; /* Force adjustment for medium screens */
+   #carouselImg2 {
+    transform: translateX(80%) translateY(-20px) !important; /* Force adjustment for medium screens */
+  }
+  #maskFaceCarousel {
+    width: 100%;
   }
 }
 
-@media (max-width: 468px) {
+@media (min-width: 370px) and (max-width: 468px) {
   #carouselImg2 {
     transform: translateX(0px) translateY(0px); /* Align for small screens */
   }
+  
 }
 
 /* Responsive adjustments for #carouselImg2 based on standard screen sizes */
@@ -242,32 +214,179 @@ height: 50% !important;
   }
 }
 
-/* Large Screens (Laptops) */
-/*@media (min-width: 892px) and (max-width: 1199px) {
-  #maskFaceCarousel2 {
-    transform: translateX(500px) translateY(-100px); Position for laptops 
-  }
-}
-*/
-/* Medium Screens (Tablets) */
-@media (min-width: 768px) and (max-width: 991px) {
-  #maskFaceCarousel2 {
-    transform: translateX(300px) translateY(-150px); /* Position for tablets */
-  }
+
+/*---------CIRCLE---------*/
+
+#circleMove{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+  overflow-x: hidden;
+ transform: translateY(-30%);
+  gap:100px;
+  z-index: 10;
+  
 }
 
-/* Extra Small Screens (Small Phones) */
-@media (max-width: 575px) {
-  #maskFaceCarousel2{
-    transform: translateX(55%) translateY(-90px); /* Position for small phones */
-  }
+.circle {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 5;
+  
+
+  /*border: #FF3688 5px solid;*/
+  border: #FFFFFF 10px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.semi-circle{
+  position: absolute;
+  width: 255px; /* Make it wider on the sides */
+  height: 130px; /* Keep the height proportional */
+  border-radius: 200px 200px 0 0; /* Adjust for the new width */
+   /* Adjust position to keep it at the top */
+  border: #FF3688 25px solid; /* Keep the border size */
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 575px) {
+.needle {
+  position: absolute;
+  bottom: 50px;          /* centro del círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4px;
+  height: 200px;           /* largo máximo */
+  background: #ff2f7d;
+  transform: translateY(150px);
+
+   /* empieza invisible */
+}
+
+.dots {
+  position: absolute;
+ width: 100%;
+ display: flex;
+  justify-content: center;
+  gap: 50px;
+  top: 50%;
+}
+
+/* individual dot */
+.dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #ff3688;
+  border-radius: 50%;
+  top: 10px;
+  transform-origin: bottom center;
+}
+
+.dot_bottoms {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #ff3688;
+  border-radius: 50%;
+  transform: translateY(13rem);
+  transform-origin: bottom center;
+} 
+.semi-circle-bigger {
+  position: absolute;
+  width: 250px;          /* same size as .circle */
+  height: 250px;
+  transform: translateY(-80px);
+  border-radius: 50%;    /* make full circle shape */
+  border: 25px solid #FF3688; /* thick pink ring */
+  border-bottom-color: transparent; /* make bottom gap */
+  box-sizing: border-box;
+}
+
+
+
+@media (max-width: 640px) {
   #title_impacto {
-    transform: translateX(8%); /* Center horizontally */
-    text-align: center; /* Ensure text is centered */
+    font-size: 40px;
+    width: 100%;
+  }
+   .swiper-pagination{
+    transform: translateY(20px); /* Adjust pagination position for small screens */
+  }
+  #maskFaceCarousel {
+    width: 100%;
+    height: auto;
+  }
+  #maskFaceCarousel2 {
+    width: 50%;
+    font-size: 20px;
+    left: 10;
+    top: -5%;
+  }
+ #CarouselImgMask {
+    width: 20%;
+    height: 20%;
+    transform: translateX(50px) translateY(-110px);
+  }
+   #circleMove {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 200px;
+    height: 120%;
+    width: 100%;
+    transform: translateY(90px);
+  }
+  .circle {
+    width: 200px;
+    height: 200px;
+  }
+  .semi-circle {
+    width: 205px; /* Adjust width for smaller screens */
+    height: 110px; /* Adjust height for smaller screens */
+    top: 106%;
+}
+.semi-circle-bigger {
+    width: 200px; /* Adjust width for smaller screens */
+    height: 200px; /* Adjust height for smaller screens */
+    transform: translateY(-50px);
+}
+}
+
+@media (min-width: 641px) and (max-width: 800px) {
+ #title_impacto {
+    font-size: 50px;
+    
   }
 }
 
-/* Ensured proper closing of media queries */
+@media (min-width: 801px) and (max-width: 1024px) {
+ 
+  
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #title_impacto {
+    font-size: 130px;
+  }
+}
+
+@media (min-width: 1441px) {
+  #title_impacto {
+    font-size: 130px;
+  }
+}
+
+
+
+ 
+

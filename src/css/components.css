@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
   background-position: var(--bg-pos-1), var(--bg-pos-2), var(--bg-pos-3);
   background-size: var(--bg-1), var(--bg-2), var(--bg-3);
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 @media ((max-width: 768px)){
   .vectors {
@@ -18,7 +18,60 @@
   }
 }
 
+@media (max-width: 400px) {
+  .vectors {
+    --bg-pos-1: center 990%;
+    --bg-pos-2: center 40%;
+    --bg-pos-3: center 50%;
+    --bg-1: 85% auto;
+    --bg-2: 75% auto;
+    --bg-3: 65% auto;
+  }
+}
 
+@media (min-width: 401px) and (max-width: 768px) {
+  .vectors {
+    --bg-pos-1: center 30%;
+    --bg-pos-2: center 40%;
+    --bg-pos-3: center 50%;
+    --bg-1: 90% auto;
+    --bg-2: 80% auto;
+    --bg-3: 70% auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .vectors {
+    --bg-pos-1: center 400px;
+    --bg-pos-2: center 600px;
+    --bg-pos-3: 200px 800px;
+    --bg-1: 110% auto;
+    --bg-2: 95% auto;
+    --bg-3: 85% auto;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .vectors {
+    --bg-pos-1: center 550px;
+    --bg-pos-2: center 700px;
+    --bg-pos-3: 250px 900px;
+    --bg-1: 115% auto;
+    --bg-2: 100% auto;
+    --bg-3: 90% auto;
+  }
+}
+
+@media (min-width: 1201px) {
+  .vectors {
+    --bg-pos-1: center 600px;
+    --bg-pos-2: center 860px;
+    --bg-pos-3: 390px 1328px;
+    --bg-1: 120% auto;
+    --bg-2: 110% auto;
+    --bg-3: 100% auto;
+  }
+}
 
 .vectors__container {
   width: min(1200px, 90%);
@@ -38,30 +91,113 @@
   padding: 1rem 0;
 }
 
+
 /* Column of stacked images*/
-#columnIMG {
+
+#columnIMG{
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: var(--col-height);
-  padding: 0.5rem 0;
+  flex-direction: row;
+  
 }
 
-.imgSizeColumn {
-  width: clamp(60px, 6.5vw, 140px);
+#columnIMG div{
+  width: 15%;
+  height: 100%;
+  flex: 1 1 auto;
+
+  box-sizing: border-box;
+}
+
+#columnIMG div img{
+  width: 30%;
   height: auto;
-  display: block;
+
+}
+/*Column 1 */
+#col-1 #col-img-1 {
+  transform: translateX(45%);
+}
+#col-1 #col-img-1-2 {
+  transform: translateX(85%) translateY(200%);
+}
+#col-1 #col-img-1-3 {
+   transform: translateX(-90%) translateY(420%);
+}
+
+/*Column 2 */
+#col-2 #col-img-2 {
+  transform: translateX(70%) translateY(60%);
+}
+
+#col-2 #col-img-2-2 {
+  transform: translateX(-80%) translateY(320%);
+}
+
+/*Column 3 */
+#col-3 #col-img-LogoPos {
+  transform: translateX(25%) translateY(130%);
+  width: 120%;
+}
+
+#col-3 #col-pinkText {
+  transform: translateX(15%) translateY(100%);
+  width: 70%;
+  color: #FF3688;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  justify-content: center; display: flex; text-align: justify;
+}
+
+#col-3 #col-img-3 {
+  transform: translateX(80%) translateY(250%);
+}
+/*Colum 4*/
+#col-4 #col-img-4 {
+  transform: translateX(70%) translateY(20%);
+
+}
+#col-4 #col-img-4-2 {
+  transform: translateX(-50%) translateY(250%);
+
+}
+
+#col-4 #col-img-4-3 {
+  transform: translateX(-80%) translateY(510%);
+}
+
+#col-5 #col-img-5 {
+   transform: translateX(50%) translateY(130%);
+}
+
+#col-5 #col-img-5-2 {
+   transform: translateX(-70%) translateY(350%);
 }
 
 /* ---------- Images general ---------- */
 
-.vector-img {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  object-fit: contain;
+
+@media (max-width: 640px) {
+  
+#col-3 #col-pinkText{
+
+}
+}
+
+@media (min-width: 641px) and (max-width: 800px) {
+  
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  
+}
+
+@media (min-width: 1025px) {
+  #col-3 #col-pinkText{
+  width: 90%;
+  transform: translateX(-15px) translateY(60%);
+}
 }
 
 /* ---------- Special variants ---------- */
@@ -70,7 +206,7 @@
 .vector--logo { width: var(--logo-w); }
 
 /* 
-   DESKTOP ART DIRECTION (>=1200px)
+   DESKTOP ART DIRECTION (>=1200px)-----------------
  */
 
 @media (min-width: 1200px) {
@@ -94,17 +230,7 @@
     height: var(--img-h);
   }
 
-  .vector-img[data-pos="1"]  { top: 24px;  left: 4%;  }
-  .vector-img[data-pos="2"]  { top: 126px; left: 30%; }
-  .vector-img[data-pos="3"]  { top: 400px; left: 8%;  }
-  .vector-img[data-pos="4"]  { top: 650px; left: 40%; }
-  .vector-img[data-pos="5"]  { top: 850px; left: 8%;  }
-  .vector-img[data-pos="6"]  { top: 950px; left: 65%; }
-  .vector-img[data-pos="7"]  { top: 30px;  left: 80%; }
-  .vector-img[data-pos="8"]  { top: 180px; left: 90%; }
-  .vector-img[data-pos="9"]  { top: 300px; left: 85%; }
-  .vector-img[data-pos="10"] { top: 500px; left: 92%; }
-  .vector-img[data-pos="11"] { top: 700px; left: 78%; }
+  
 
   .vector--pink {
     position: absolute;
@@ -162,38 +288,40 @@
 }
 
 :root {
-  --bg-pos-1: center 600px;
+  --bg-pos-1: center 900px;
   --bg-pos-2: center 860px;
   --bg-pos-3: 390px 1328px;
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .vectors {
-    --bg-pos-1: center 600px;
-    --bg-pos-2: center 860px;
-    --bg-pos-3: 390px 1328px;
+    --bg-pos-1: center 550px;
+    --bg-pos-2: center 700px;
+    --bg-pos-3: 250px 900px;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 992px) {
   .vectors {
-    --bg-pos-1: center 500px;
-    --bg-pos-2: center 700px;
-    --bg-pos-3: 300px 1000px;
+    --bg-pos-1: center 400px;
+    --bg-pos-2: center 600px;
+    --bg-pos-3: 200px 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vectors {
+    --bg-pos-1: center 30%;
+    --bg-pos-2: center 40%;
+    --bg-pos-3: center 50%;
   }
 }
 
 @media (max-width: 600px) {
   .vectors {
-    --bg-pos-1: center 20%;
-    --bg-pos-2: left 21%; 
-    --bg-pos-3: center 22%;
-
-    --bg-1: 110% auto;
-    /*sizes of the face*/
-    --bg-2: 100% auto;;
-     /*sizes of the heart*/
-    --bg-3: 55% auto;
+    --bg-pos-1: center 18%;
+    --bg-pos-2: center 30%;
+    --bg-pos-3: center 50%;
   }
 }
 

@@ -31,20 +31,6 @@
   object-fit: cover;
   object-position: center;
 }
-/* centered inside the video section */
-#carmenNameLogoBig{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-  display: block;
-  max-width: 70%;
-  max-height: 40vh;
-  width: auto;
-  height: auto;
-  pointer-events: none;
-}
 
 /* Hide native big overlay play button */
 video::-webkit-media-controls-overlay-play-button,
@@ -85,3 +71,99 @@ video::-moz-media-controls {
 .offcanvas-backdrop{
   z-index: 2900 !important;
 }
+/* centered inside the video section */
+#carmenNameLogoBig{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: block;
+  max-width: 70%;
+  max-height: 40vh;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+}
+
+
+#saludMujer{
+  position: absolute;
+  
+  
+  z-index: 4;
+  display: block;
+  max-width: 70%;
+  max-height: 40vh;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+}
+
+#iniciativa {
+  position: absolute;
+  right: 0; /* Align text to the left */
+  color: #FF3688;
+  width: 30%;
+  z-index: 5;
+  text-align: left;
+  justify-content: flex-end; /* Ensure content aligns to the left */
+  font-size: 25px;
+}
+.text-white{ visibility: hidden;}
+
+@media (max-width: 640px) {
+  #iniciativa{
+   font-size: 10px;
+   top: 55%;
+   width: 50%;
+
+  }
+  #saludMujer{ 
+    visibility: hidden;
+  }
+  .text-white{
+    visibility: visible;
+    color: white;
+    z-index: 5;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 800px) {
+  #iniciativa{
+   font-size: 20px;
+  }
+  #saludMujer{ 
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  #iniciativa {
+    transform: translateX(20%);
+  }
+  #saludMujer {
+    transform: translateX(-20%); /* Ensure no overlap */
+  }
+  
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #iniciativa {
+    transform: translateX(20%);
+  }
+  #saludMujer {
+    transform: translateX(-40%); /* Ensure no overlap */
+  }
+}
+
+@media (min-width: 1441px) {
+  #iniciativa {
+    transform:translateY(890%);
+  }
+  #saludMujer { 
+    transform: translateX(-590%) translateY(-300%); 
+  }
+}
+
+

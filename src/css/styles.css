@@ -39,8 +39,69 @@ body { padding-top: 0; background-color: #EFE6DF; }
   }
 }
 
+#textGenero{
+  color: #FF3688;
+  
+  text-transform: uppercase;
+  text-align: center;
+  justify-self: center;
+  display: flex;
+  letter-spacing: -3px;
+  line-height: 1;
+  width: 58%;
+  
+}
+
+@media (max-width: 640px) {
+  #textGenero {
+    font-size: 50px;
+    width: 100%;
+  }
+  #section_4{
+    height: 680px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 800px) {
+  #textGenero {
+    font-size: 50px;
+  }
+  #section_4{ 
+    height: 680px; } 
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  #textGenero {
+    font-size: 60px;
+    transform: translateY(5%);
+  }
+    #section_4{ 
+    height: 680px; } 
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #textGenero {
+    font-size: 90px;
+    transform: translateY(20%); 
+  }
+  #section_4{ 
+    height: 680px; } 
+}
+
+@media (min-width: 1441px) {
+  #textGenero {
+    font-size: 75px;
+    transform: translateY(90%); 
+    width: 65%;
+  }
+  #section_4{ 
+    height: 680px; } 
+}
 
 
+
+
+/* Section 5 */
 #section_4_Genero {
   background-color: #EFE6DF;
   /* vertical gradient from the original beige to the pink */
@@ -88,6 +149,9 @@ body { padding-top: 0; background-color: #EFE6DF; }
   #vectorCarmenImage{ max-width: 100%; position: relative; z-index: 20; display: block; margin-top: -10px; }
 }
 
+/* Small-screen adjustments for the navbar */
+
+
 /* section 5*/
 
 #section_5{
@@ -113,6 +177,13 @@ body { padding-top: 0; background-color: #EFE6DF; }
   height: 3000px;
   padding: 36px 0;
   color: inherit;
+}
+@media (max-width: 640px) {
+  #section_6 {
+    height: 2500px;          
+         
+    overflow: hidden;     
+  }
 }
 
 #section_6 .container{

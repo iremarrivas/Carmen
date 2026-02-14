@@ -87,7 +87,7 @@ transform: translateX(300px);
 @media (max-width: 768px) {
   .checkbox > span{  
   display: block;
-transform: translateX(15px);
+transform: translateX(4px) translateY(-10px);
   }
 }
 .checkbox > p {

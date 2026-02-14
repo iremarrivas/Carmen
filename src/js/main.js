@@ -1,3 +1,9 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import MotionPathPlugin from "gsap/MotionPathPlugin";
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+
 document.addEventListener('DOMContentLoaded', () => {
 	const v = document.getElementById('heroVideo');
 	if (!v) return;
@@ -9,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Autoplay may be blocked; user can still press play via UI if needed
 		console.debug('Autoplay was blocked (user gesture required).');
 	});
+
+
+	gsap.fromTo('#heroVideo', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'power2.out' });
 });
 
 // Toggle navbar background after scrolling past the hero video
@@ -215,4 +224,133 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: '.swiper-button-prev',
     },
   });
+});
+
+// Animations
+document.addEventListener('DOMContentLoaded', () => {
+
+	const timeline = gsap.timeline({
+		scrollTrigger: { 
+			trigger: '#section_3', 
+			start: 'top 80%', 
+			end: 'bottom 60%', 
+			scrub: true, 
+			markers:true, 
+		} 
+		}); 
+		
+	timeline.to('#card-1',{
+		y: -120, 
+		duration: 1.5, 
+		ease: 'power2.out',
+	})
+	.to('#card-2',{
+		y: 20, 
+		duration: 1.5, 
+		ease: 'power2.out', 
+	},0)
+	.to('#card-3',{ 
+		y: -60, 
+		duration: 1.5, 
+		ease: 'power2.out', 
+	},0);
+
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	gsap.to(".dot_bottoms", {
+		y: -50,
+		duration: 1,
+		delay: 0.5,
+		
+		ease: "power2.inOut",
+		scrollTrigger: {
+			trigger: ".circle",
+			start: "top bottom",
+			end: "1000px",
+			scrub: true,
+			
+		}
+		
+	});
+	gsap.to(".needle", {
+		clipPath: "inset(0 0 100% 0)",
+		duration: 1, // Duration of the fade-out
+		//delay: 2.5, // Delay before starting the fade-out
+		ease: "power2.inOut", // Smooth easing
+		scrollTrigger: {
+			trigger: ".circle", 
+			start: "top 95%", 
+			end: "750px", 
+			scrub: true, 
+  		},
+  
+	});
+
+	gsap.utils.toArray("#circleMove .circle").forEach((circle) => {
+  
+  const semi = circle.querySelector(".semi-circle");
+  const bigger = circle.querySelector(".semi-circle-bigger");
+
+  gsap.set(semi, {
+    position: "absolute",
+    top: "78%",
+    left: "50%",
+    xPercent: -50,
+    yPercent: -50,
+    y: -125, // radius (250 / 2)
+	
+	
+  });
+
+  gsap.to(semi, {
+    rotation: 360, 
+    transformOrigin: "50% 125px",
+    ease: "none",
+    scrollTrigger: {
+      trigger: circle,
+      start: "top center", 
+      end: "+=1100", // Adjust as needed for how long the animation should last
+      scrub: true
+    }
+  });
+  gsap.set(bigger, {
+	position: "absolute",
+    top: "105%",
+    left: "50%",
+    xPercent: -50,
+    yPercent: -50,
+    y: -125 
+	});
+
+  gsap.to(bigger, {
+    rotation: 360, 
+    transformOrigin: "50% 125px",
+    ease: "none",
+    scrollTrigger: {
+      trigger: circle,
+      start: "top center",
+      end: "+=1100", // Adjust as needed for how long the animation should last
+      scrub: true
+    }
+  });
+	})
+
+gsap.from("#columnIMG img", {
+  opacity: 0,
+  scale: 0.85,              // slightly smaller
+  duration: 3.2,
+  ease: "back.out(1.4)",    // nice soft pop effect
+  stagger: 0.25,
+  scrollTrigger: {
+    trigger: "#columnIMG",
+    start: "top 75%",
+    toggleActions: "play none none none"
+    // markers: true
+  }
+});
+
+
 });

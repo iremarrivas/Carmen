@@ -2,7 +2,6 @@
 :root{
   --card-gap: 1.25rem; /* default gap between section 3 cards */
   --card-gap-mobile: .75rem; /* fallback mobile gap */
-  --card-lift: 60px; /* visual lift for highlighted card */
   --card-min-width: 100px;
   --card-max-width: 450px;
   --nav-text: #EFE6DF;

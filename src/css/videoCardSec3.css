@@ -27,11 +27,9 @@
 
 .card {
 
-  --card-lift: var(--card-default-lift, 0px);
+ 
   --card-radius: var(--card-default-radius, 0.7rem);
   --card-video-fit: var(--card-default-video-fit, cover);
-  transform: translateY(calc(-1 * var(--card-lift))) translateZ(0);
-  
   transition: transform 200ms ease, filter 200ms ease;
   border-radius: var(--card-radius);
   overflow: hidden;
@@ -40,10 +38,6 @@
 
 
 
-/* Card variants */
-.card--hero   { --card-lift: 90px; }
-.card--mid    { --card-lift: 20px; --card-radius: 1rem; --card-video-fit: cover; --card-filter: saturate(1.05); }
-.card--low    { --card-lift: 8px;  --card-radius: 0.4rem; --card-filter: grayscale(0.12); }
 
 /* 
    Card video
@@ -52,8 +46,7 @@
 .card-video {
   display: block;
   width: 100%;
-  aspect-ratio: 9 / 16;
-  
+  aspect-ratio: 9 / 15;
   object-fit: var(--card-video-fit);
   filter: var(--card-filter);
 }
@@ -61,21 +54,16 @@
 /* Centered image overlay inside a card */
 .card-center-img{
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 40%;
-  transform: translate(-50%, -50%);
-  z-index: 7; /* above video and overlay */
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 7;
+  
+
+
 }
 /*Card icon position*/
   .card-center-Icon{
     position: absolute;
     left: 50%;
-    top: 20%;/* slightly below the centered icon */
+    top: 10%;/* slightly below the centered icon */
     transform: translateX(-50%);
     z-index: 8;
     pointer-events: none;
@@ -94,65 +82,48 @@
     .card-center-Icon img{ width: 100%; }
   }
 
-.card-center-img img{
-  display: block;
-  
-  height: auto;
-}
 
 /* Bottom image inside the card, centered at the base */
-.card-bottom-img{
+.card-bottom-text{
   position: absolute;
-  left: 50%;
-  bottom: 80px;
-  width: 65%;
-  
-  transform: translateX(-50%);
+  color: white;
+  font-size: 20px;
   z-index: 7; /* sit above overlay and centered icon */
-  pointer-events: none;
+  text-transform: uppercase;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.card-bottom-img img{
-  display: block;
-  width: 100%;
-  height: auto;
-
+  text-align: justify;
+  width: 90%;
+  left: 5%;
+  padding: 0 30px; bottom: 2%;
 }
 
-@media (max-width: 708px){
-  .card-bottom-img{ bottom: 80px; }
-  .card-bottom-img img{ width: 100%; }
-}
+
 
 
 /* Top image inside the card, centered near the top */
-.card-top-img{
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  width: 30%;
-  transform: translateX(-50%);
+.card-top-text{
+ color: white;
   z-index: 8; /* sit above center and bottom icons */
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.card-top-img img{
-  display: block;
-  width: 100%;
-  height: auto;
+  font-size: 30px;
+text-transform: uppercase; 
+display: flex; 
+text-align: justify;
+justify-content: center; 
+font-style: normal; 
+width: 100%; padding: 0 20px;
+position: absolute;
+top: 50%;
  
 }
+
 
 
 /*cars video icon image*/
 .card.has-center .card-center-img{
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 35%;
   transform: translate(-50%, -50%);
 }
 
@@ -168,7 +139,7 @@
 }
 
 
-.card > *:not(.card-video):not(.card-center-img):not(.card-bottom-img):not(.card-top-img){
+.card > *:not(.card-video):not(.card-center-img):not(.card-bottom-text):not(.card-top-text){
   position: relative;
   z-index: 6;
 }
@@ -199,11 +170,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
   }
-
-  
-  /* Desktop-only per-card adjustments */
-  #card-1 { --card-lift: 100px; }
-  #card-3 { --card-lift: 80px; }
+ 
 }
 
 /* 
@@ -236,7 +203,7 @@
   .card .card-video,
   .card-video {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 9 / 15;
   object-fit: var(--card-video-fit);
   }
 }
@@ -244,8 +211,8 @@
 /**/
 @media (max-width: 768px) {
   .card {
-    /* allow min-height to take effect */
-    min-height: var(--section3-height);
+    /* allow min-height to take effect 
+    min-height: var(--section3-height);*/
   }
 }
 
