@@ -7,13 +7,11 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 document.addEventListener('DOMContentLoaded', () => {
 	const v = document.getElementById('heroVideo');
 	if (!v) return;
-	// Ensure muted+loop and attempt to autoplay (browsers allow autoplay when muted)
 	v.muted = true;
 	v.loop = true;
 	v.playsInline = true;
 	v.play().catch(() => {
-		// Autoplay may be blocked; user can still press play via UI if needed
-		console.debug('Autoplay was blocked (user gesture required).');
+		console.debug('');
 	});
 
 
@@ -29,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				// hero is visible -> remove scrolled state
+				
 				navbar.classList.remove('scrolled');
 			} else {
-				// hero not visible -> add scrolled state
+		
 				navbar.classList.add('scrolled');
 			}
 		});
@@ -41,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	observer.observe(hero);
 });
 
-// Footer form validation
+// Footer form validation --------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
 	const form = document.getElementById('footerForm');
 	if (!form) return;
@@ -55,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function validateControl(control) {
-		// pattern-specific message for name fields
+		// pattern-specific message f
 		if ((control.id === 'firstName' || control.id === 'lastName') && control.validity.patternMismatch) {
 			showError(control, 'No uses números ni caracteres inválidos (solo letras espacios - y \\' );
 			return false;
 		}
-		// checkbox handled via checked
+
 		if (control.type === 'checkbox') {
 			if (!control.checked) {
 				showError(control, 'Acepta la política para continuar.');
@@ -71,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		if (!control.checkValidity()) {
-			// use browser's validation message where possible
 			showError(control, control.validationMessage || 'Campo inválido');
 			return false;
 		}
@@ -89,16 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (cleaned !== c.value) {
 					const prevPos = c.selectionStart || c.value.length;
 					c.value = cleaned;
-					// move caret to end for simplicity
+	
 					try { c.setSelectionRange(cleaned.length, cleaned.length); } catch (e) {}
 					showError(c, 'Se eliminaron caracteres no permitidos.');
-					// clear transient message
+			
 					if (c._errorTimeout) clearTimeout(c._errorTimeout);
 					c._errorTimeout = setTimeout(() => { showError(c, ''); }, 1400);
 				}
 			}
-
-			// sanitize phone input in real-time: allow digits, +, (), -, spaces
 			if (c.id === 'phone') {
 				const allowed = c.value.match(/[0-9+()\-\s]+/g);
 				const cleaned = allowed ? allowed.join('') : '';
@@ -124,8 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (firstInvalid) firstInvalid.focus();
 			return;
 		}
-
-		// Simulate successful submit (replace with real submission if desired)
 		alert('Gracias — formulario enviado (simulado).');
 		form.reset();
 		controls.forEach(c => showError(c, ''));
@@ -134,11 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-//Carousel initialization (if using Swiper for the carousel in section 6)
+//Carousel initialization ( section 6)
 const swiperContainer = document.querySelector('#swiper-final .swiper-wrapper');
 
 window.addEventListener('load', function() {
-  // Verificamos que Swiper existe para evitar errores
+
   
   if (typeof Swiper !== 'undefined') {
     const swiper = new Swiper('#swiper-final', {
@@ -153,10 +146,10 @@ window.addEventListener('load', function() {
       effect: 'coverflow',
       coverflowEffect: {
         rotate: 0,
-        stretch: 500, // Imágenes más juntas (reduce el gap)
-        depth: 200,   // Empuja las imágenes al fondo
+        stretch: 500, 
+        depth: 200,  
         modifier: 1,
-        slideShadows: false, // Desactivado para que la transparencia luzca limpia
+        slideShadows: false, 
       },
 	   breakpoints: {
 		
@@ -164,14 +157,14 @@ window.addEventListener('load', function() {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		coverflowEffect: {
-            stretch: 300, // Adjust stretch for small screens
+            stretch: 300, 
         },
 		},
     	468: {
         slidesPerView: 1,
         spaceBetween: 80,
         coverflowEffect: {
-            stretch: 200, // Adjust stretch for small screens
+            stretch: 200,
         },
 		},
 	},
@@ -180,7 +173,7 @@ window.addEventListener('load', function() {
       observeParents: true,
       pagination: {
         el: '.swiper-pagination',
-        clickable: true, // Permitir clics en los puntos de paginación
+        clickable: true,
       },
       on: {
         slideChange: function () {
@@ -188,7 +181,7 @@ window.addEventListener('load', function() {
         },
         reachEnd: function () {
           console.log('Último slide alcanzado, reiniciando...');
-          this.slideToLoop(0); // Reinicia el loop al primer slide
+          this.slideToLoop(0); 
         },
       },
     });
@@ -204,16 +197,16 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
 	speed: 2500, 
     autoplay: {
-      delay: 1500, // Slide changes every 2 seconds
-      disableOnInteraction: false, // Continue autoplay after user interaction
+      delay: 1500, 
+      disableOnInteraction: false, 
     },
 	effect: 'coverflow',
       coverflowEffect: {
         rotate: 0,
-        stretch: 150, // Imágenes más juntas (reduce el gap)
-        depth: 200,   // Empuja las imágenes al fondo
+        stretch: 150, // (gap)
+        depth: 200,   
         modifier: 1,
-        slideShadows: false, // Desactivado para que la transparencia luzca limpia
+        slideShadows: false, 
       },
     pagination: {
       el: '.swiper-pagination',
@@ -300,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     left: "50%",
     xPercent: -50,
     yPercent: -50,
-    y: -125, // radius (250 / 2)
+    y: -125, 
 	
 	
   });
@@ -312,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: {
       trigger: circle,
       start: "top center", 
-      end: "+=1100", // Adjust as needed for how long the animation should last
+      end: "+=1100", 
       scrub: true
     }
   });
@@ -332,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: {
       trigger: circle,
       start: "top center",
-      end: "+=1100", // Adjust as needed for how long the animation should last
+      end: "+=1100",
       scrub: true
     }
   });
@@ -340,9 +333,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 gsap.from("#columnIMG img", {
   opacity: 0,
-  scale: 0.85,              // slightly smaller
+  scale: 0.85,             
   duration: 3.2,
-  ease: "back.out(1.4)",    // nice soft pop effect
+  ease: "back.out(1.4)",    
   stagger: 0.25,
   scrollTrigger: {
     trigger: "#columnIMG",
@@ -354,3 +347,7 @@ gsap.from("#columnIMG img", {
 
 
 });
+
+  
+
+

@@ -41,6 +41,6 @@
 
 /* solid navbar state after scrolling past the hero */
 .navbar.scrolled{
-  background-color: rgb(0, 0, 0) !important; /* dark solid */
+  background-color: rgb(0, 0, 0) !important; 
   backdrop-filter: blur(0px);
 }

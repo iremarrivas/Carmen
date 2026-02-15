@@ -2,13 +2,12 @@
 
 /*imagens inside the carusel sizes*/
 .swiper-slide {
-width: 100% !important;
-height: 50% !important; 
-
+width: 100%;
+height: 50%;
 }
 .swiper-slide img {
-  width: 50% !important;
-  height: auto !important;
+  width: 50%;
+  height: auto;
   display: block;
   margin: 0 auto;
   border-radius: 12px;
@@ -17,18 +16,11 @@ height: 50% !important;
 
 /* Swiper root */
 .swiper-circular { width: 100%; margin: 0 auto; padding: 40px 0; }
-
-/* Allow Swiper to transform the wrapper — full width so size changes propagate */
 .swiper-circular .swiper-wrapper { display: flex; align-items: center; width: 50%; }
-
-
 .swiper-circular .swiper-slide {
-    flex: 0 0 auto !important;
-    
-    background: transparent;
+  flex: 0 0 auto;
+  background: transparent;
 }
-
-
 
 /* Opacity staging for coverflow look (non-size affecting) */
 .swiper-slide { opacity: 0.15; }
@@ -46,56 +38,52 @@ height: 50% !important;
 
 @media (max-width: 768px) {
     #swiper-final .swiper-slide {
-        height: auto !important;
-        width: 100%; 
+      height: auto;
+      width: 100%; 
     }
 
     #swiper-final  {
-        width: 100% !important; 
-        height: 400px !important;
-       
+      width: 100%; 
+      height: 400px;
     }
 
 }
 
   .swiper-slide img {
-        width: 50% !important; 
-        height: 300px !important;
-
+        width: 50%; 
+        height: 300px;
 }
    
     .swiper-circular .swiper-slide {
-        height: 70vw !important;
-       
-       
+      height: 70vw;
     }
 
     .swiper-circular .swiper-slide img {
-        height: 100% !important;
+      height: 100%;
     }
 
 
 @media (max-width: 420px) {
     #swiper-final .swiper-slide {
-        height: auto !important;
-        width: 100%; 
-         margin-bottom: 20px;
+      height: auto;
+      width: 100%; 
+       margin-bottom: 20px;
     }
 
     .swiper-circular .swiper-slide {
-        height: 500px !important;
-         width: 100%;
+      height: 500px;
+       width: 100%;
     }
 
     .swiper-circular .swiper-slide img {
-        height: 100%; /* Corrected syntax error */
+        height: 100%; 
     }
 
 
 }
 
 .swiper-pagination-bullet-active {
-    background-color:  #FF3688 /*the pagination dots color*/
+    background-color:  #FF3688 
 }
 #title_impacto {
   width: 100%;
@@ -108,16 +96,16 @@ height: 50% !important;
 
 #swiper-final,
 #new-carousel {
-  display: none; /* Ensure both carousels are visible */
+  display: none; 
 }
 
 @media (max-width: 700px) {
   #swiper-final {
-    display: none; /* Hide the original carousel on small screens */
+    display: none; 
   }
 
   #new-carousel {
-    display: block; /* Show the new carousel on small screens */
+    display: block; 
   }
 }
 
@@ -128,8 +116,6 @@ height: 50% !important;
 
   
 }
-
-/*Images in the carousel Section */
 
 #maskFaceCarousel {
   position: relative;
@@ -142,8 +128,6 @@ height: 50% !important;
   display: block;
   width: 30%;
   height: auto;
-  /*width: 47.6%;
-  height: 62.7%;*/
   transform: translateX(50px);
 }
 
@@ -172,47 +156,9 @@ height: 50% !important;
     display: block;
     width: 50%;
     height: auto;
-    /*width: 47.6%;
-    height: 62.7%;*/
     transform: translateX(850px) translateY(-520px);
 }
 
-@media (max-width: 1200px) {
-  #carouselImg2 {
-    transform: translateX(90%) translateY(-300px); /* Adjust for large screens */
-  }
-}
-
-@media (max-width: 992px) {
-  #carouselImg2 {
-    transform: translateX(100px) translateY(-100px); /* Adjust for medium-large screens */
-  }
-}
-
-@media (max-width: 768px) {
-   #carouselImg2 {
-    transform: translateX(80%) translateY(-20px) !important; /* Force adjustment for medium screens */
-  }
-  #maskFaceCarousel {
-    width: 100%;
-  }
-}
-
-@media (min-width: 370px) and (max-width: 468px) {
-  #carouselImg2 {
-    transform: translateX(0px) translateY(0px); /* Align for small screens */
-  }
-  
-}
-
-/* Responsive adjustments for #carouselImg2 based on standard screen sizes */
-
-/* Extra Large Screens (Desktops) */
-@media (min-width: 1200px) {
-  #carouselImg2 {
-    transform: translateX(90%) translateY(-430px); /* Position for desktops */
-  }
-}
 
 
 /*---------CIRCLE---------*/
@@ -226,7 +172,7 @@ height: 50% !important;
   height: 450px;
   overflow-x: hidden;
  transform: translateY(-30%);
-  gap:100px;
+  gap:12rem;
   z-index: 10;
   
 }
@@ -237,9 +183,6 @@ height: 50% !important;
   height: 250px;
   border-radius: 50%;
   z-index: 5;
-  
-
-  /*border: #FF3688 5px solid;*/
   border: #FFFFFF 10px solid;
   display: flex;
   justify-content: center;
@@ -247,11 +190,10 @@ height: 50% !important;
 }
 .semi-circle{
   position: absolute;
-  width: 255px; /* Make it wider on the sides */
-  height: 130px; /* Keep the height proportional */
-  border-radius: 200px 200px 0 0; /* Adjust for the new width */
-   /* Adjust position to keep it at the top */
-  border: #FF3688 25px solid; /* Keep the border size */
+  width: 255px; 
+  height: 130px; 
+  border-radius: 200px 200px 0 0; 
+  border: #FF3688 25px solid; 
   border-bottom: none;
   display: flex;
   justify-content: center;
@@ -260,16 +202,14 @@ height: 50% !important;
 
 .needle {
   position: absolute;
-  bottom: 50px;          /* centro del círculo */
+  bottom: 50px;       
   display: flex;
   justify-content: center;
   align-items: center;
   width: 4px;
-  height: 200px;           /* largo máximo */
+  height: 200px;           
   background: #ff2f7d;
   transform: translateY(150px);
-
-   /* empieza invisible */
 }
 
 .dots {
@@ -303,13 +243,58 @@ height: 50% !important;
 } 
 .semi-circle-bigger {
   position: absolute;
-  width: 250px;          /* same size as .circle */
+  width: 250px;         
   height: 250px;
   transform: translateY(-80px);
-  border-radius: 50%;    /* make full circle shape */
-  border: 25px solid #FF3688; /* thick pink ring */
-  border-bottom-color: transparent; /* make bottom gap */
+  border-radius: 50%;    
+  border: 25px solid #FF3688;
+  border-bottom-color: transparent; 
   box-sizing: border-box;
+}
+
+
+
+/*titles*/
+.title-dot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap:14rem;
+  transform: translate(0px, 20rem);
+  color: #FF3688;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.title-dot p {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.long-text{
+  position: relative;
+  display: flex;
+  text-align: justify;
+  
+  color: #FF3688;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.text-row {
+  
+  display: flex;
+  justify-content: center;
+  gap: 11rem;
+  width: 90%;
+  margin-top: 25rem;
+  margin-left: 5rem;
 }
 
 
@@ -320,7 +305,7 @@ height: 50% !important;
     width: 100%;
   }
    .swiper-pagination{
-    transform: translateY(20px); /* Adjust pagination position for small screens */
+    transform: translateY(20px); 
   }
   #maskFaceCarousel {
     width: 100%;
@@ -330,7 +315,7 @@ height: 50% !important;
     width: 50%;
     font-size: 20px;
     left: 10;
-    top: -5%;
+    top: 3%;
   }
  #CarouselImgMask {
     width: 20%;
@@ -341,52 +326,83 @@ height: 50% !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 200px;
-    height: 120%;
+    gap: 30rem;
+    height: 112rem;
     width: 100%;
-    transform: translateY(90px);
+    transform: translateY(20rem);
   }
   .circle {
     width: 200px;
     height: 200px;
   }
   .semi-circle {
-    width: 205px; /* Adjust width for smaller screens */
-    height: 110px; /* Adjust height for smaller screens */
+    width: 205px; 
+    height: 110px; 
     top: 106%;
+  }
+  .semi-circle-bigger {
+      width: 200px; 
+      height: 200px; 
+      transform: translateY(-50px);
+  }
+  .text-row{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    gap: 32rem;
+    transform: translateY(-65rem);
+  }
+  .title-dot {
+    display: flex;
+    font-size: 25px;
+    flex-direction: column;
+    width: 100%;
+    
+    gap: 40rem;
+    top: 24rem;
+  }
+  .long-text{
+    width: 80%;
+    font-size: 15px;
+    text-align: justify;
+  }
+
 }
-.semi-circle-bigger {
-    width: 200px; /* Adjust width for smaller screens */
-    height: 200px; /* Adjust height for smaller screens */
-    transform: translateY(-50px);
-}
-}
+
 
 @media (min-width: 641px) and (max-width: 800px) {
  #title_impacto {
     font-size: 50px;
-    
   }
-}
-
-@media (min-width: 801px) and (max-width: 1024px) {
- 
+   #carouselImg2 {
+    transform: translateX(100px) translateY(-100px); 
+  }
   
+  #maskFaceCarousel {
+    width: 100%;
+  }
+
 }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
   #title_impacto {
     font-size: 130px;
   }
+  #carouselImg2 {
+    transform: translateX(90%) translateY(-300px); 
+  }
+  
 }
 
 @media (min-width: 1441px) {
   #title_impacto {
     font-size: 130px;
   }
+#carouselImg2 {
+    transform: translateX(90%) translateY(-430px); 
+  }
 }
 
 
 
- 
 

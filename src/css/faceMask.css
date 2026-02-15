@@ -3,10 +3,10 @@
 */
 #maskFace {
   position: absolute;
-  top: 25%;       /* altura inicial */
-  left: 50%;      /* centrado horizontal */
+  top: 25%;       
+  left: 50%;      
   transform: translateX(-50%);
-  width: 30%;     /* tamaño inicial */
+  width: 30%;    
   max-height: 50%;
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@
  */
 .pinkFaces {
   position: absolute;
-  left: 0%;       /* pegado a la izquierda */
+  left: 0%;       
   top: 35%;
   width: 10%;
   pointer-events: none;
@@ -66,17 +66,17 @@
   #maskFace {
     width: 50%;
     max-height: 40%;
-    top: 45%;           /* baja un poco */
+    top: 45%;          
   }
 
-  /* Pink Faces Izquierda */
+  /* Pink Faces left */
   .pinkFaces {
     top: 55%;
     left: 0%;
     width: 20%;
   }
 
-  /* Pink Faces Derecha */
+  /* Pink Faces right */
   .pinkFacesRight {
     top: 55%;
     right: 0%;
@@ -92,7 +92,7 @@
   #maskFace {
     width: 50%;
     max-height: 30%;
-    top: 30%;           /* baja más en móvil */
+    top: 30%;           
   }
 
   /* Pink Faces Izquierda */
@@ -122,8 +122,8 @@
   display: flex;
   text-align: center; 
   justify-self: center;
-  align-items: center; /* Added to vertically center content */
-  justify-content: center; /* Added to horizontally center content */
+  align-items: center; 
+  justify-content: center; 
   letter-spacing: 1px; 
   line-height: 1;
   width: 58%;
@@ -135,8 +135,77 @@
   height: auto;
 }
 
+
+#section_5 .down-hearts.down-arrows {
+  position: absolute;
+  transform: translateX(-50%) translateY(-65rem);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  color: #FF3688;             
+  z-index: 12;
+  pointer-events: auto;
+}
+
+#section_5 .down-hearts .heart {
+  width: 36px;
+  height: 36px;
+  display: block;
+  fill: currentColor;         
+  stroke: rgba(255,255,255,0.95); 
+  stroke-width: 3;
+  opacity: 0;
+  transform: translateY(-8px) scale(.95);
+  animation: heart-move 1.6s ease-in-out infinite;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.12));
+}
+
+/* staggered delays */
+#section_5 .down-hearts .heart:nth-child(1){ animation-delay: 0s; }
+#section_5 .down-hearts .heart:nth-child(2){ animation-delay: 0.12s; }
+#section_5 .down-hearts .heart:nth-child(3){ animation-delay: 0.24s; }
+#section_5 .down-hearts .heart:nth-child(4){ animation-delay: 0.36s; }
+
+@keyframes heart-move {
+  0%   { opacity: 0; transform: translateY(-10px) scale(.9); }
+  20%  { opacity: 1; transform: translateY(0) scale(1); }
+  60%  { opacity: 1; transform: translateY(8px) scale(.98); }
+  100% { opacity: 0; transform: translateY(16px) scale(.95); }
+}
+
+
+
 @media (max-width: 640px) {
-#section_5 {
+
+  #section_5 .container { position: relative; overflow: visible; }
+
+  #section_5 .down-hearts.down-arrows {
+    position: absolute;
+
+    transform: translateX(-50%) translateY(-35rem);
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    z-index: 12;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #section_5 .down-hearts .heart {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    stroke: rgba(255,255,255,0.95);
+    stroke-width: 2.4;
+    opacity: 1;
+    transform: none;
+  }
+
+  #section_5 {
     height: 800px;          
     padding: 18px 0;        
     overflow: hidden;     
@@ -161,17 +230,29 @@
 
 
 @media (min-width: 641px) and (max-width: 800px) {
-
+#letter_Carme_Sec5 {
+    font-size: 22px;
+    width: 80%;
+    top: 40%;
+  }
 }
 
 @media (min-width: 801px) and (max-width: 1024px) {
-  
+  #letter_Carme_Sec5 {
+    font-size: 22px;
+    width: 60%;
+    top: 40%;
+  }
   
 }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
   
-  
+   #letter_Carme_Sec5 {
+    font-size: 22px;
+    width: 60%;
+    top: 40%;
+  }
 }
 
 @media (min-width: 1441px) {

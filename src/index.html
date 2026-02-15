@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -25,11 +24,10 @@
     <link rel="stylesheet" href="css/carousel.css">
 
     <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/scroll.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-
-  <!--CAMBIAR LAS IMG CON TEXTOS <p> -->
 
     <nav class="navbar bg-body-tertiary">
       <div class="container d-flex align-items-center justify-content-between">
@@ -70,61 +68,69 @@
 <div id="section_1">
   
   <div class="container-fluid p-0" id="filter">
-      <div id="head_video">
-        <video id="heroVideo" src="/img/GettyImages-923078808.mp4" autoplay muted loop playsinline width="100%" poster="/img/CarmenLogoNEG.png"></video>
-      
-        <!-- Carmen name logo sit above all overlays -->
-        <img id="carmenNameLogoBig" src="/img/carmenName.png" alt="">    
-        <img id="saludMujer" src="/img/Salud_mujer.png" alt="">
-        <p id="iniciativa">
-              Una iniciativa para visibilizar y acabar con las desigualdades en
-              la salud.
-            </p>
-
-        <div class="container flex items-center justify-center flex-col gap-[5%] relative z-20 min-h-screen">
-          <div class="md:hidden w-full">
-            <p class="text-white ">
-              Salud con nombre de mujer
-            </p>
-            
-          </div>
+        <div id="head_video">
+          <video id="heroVideo" src="/img/GettyImages-923078808.mp4" autoplay muted loop playsinline width="100%" poster="/img/CarmenLogoNEG.png"></video>
         
-        <!-- <div class="container flex items-center justify-center flex-col gap-[5%] relative z-20 min-h-screen">
-          <div class="md:hidden w-full">
-            <p class="text-white max-w-[110px] sm:text-xl leading-[1.1] sm:max-w-[145px] mb-[14px]">
-              Salud con nombre de mujer
-            </p>
-            <img src="/images/carmen-text-vector.svg" class="w-full" alt="Carmen">
-            <p class="text-pink sm:text-xl text-right max-w-[233px] leading-[1.1] sm:max-w-[260px] ml-auto mt-[14px]">
-              Una iniciativa para visibilizar y acabar con las desigualdades en
-              la salud.
-            </p>
+          <!-- Carmen name logo sit above all overlays -->
+          <img id="carmenNameLogoBig" src="/img/carmenName.png" alt="">    
+          <img id="saludMujer" src="/img/Salud_mujer.png" alt="">
+              <p id="iniciativa">
+                Una iniciativa para visibilizar y acabar con las desigualdades en
+                la salud.
+              </p>
+
+          <div id="whiteText">
+            <p class="text-white">
+                Salud con nombre de mujer
+              </p>
           </div>
-          <h1 class="hidden md:block hero-logo" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-            <img src="/images/hero-text.svg" alt="Carmen, Salud con nombre de Mujer" class="w-[90%] max-w-[1230px] mx-auto">
-          </h1>
-        </div> -->
+          
+          <!-- <div class="container flex items-center justify-center flex-col gap-[5%] relative z-20 min-h-screen">
+            <div class="md:hidden w-full">
+              <p class="text-white max-w-[110px] sm:text-xl leading-[1.1] sm:max-w-[145px] mb-[14px]">
+                Salud con nombre de mujer
+              </p>
+              <img src="/images/carmen-text-vector.svg" class="w-full" alt="Carmen">
+              <p class="text-pink sm:text-xl text-right max-w-[233px] leading-[1.1] sm:max-w-[260px] ml-auto mt-[14px]">
+                Una iniciativa para visibilizar y acabar con las desigualdades en
+                la salud.
+              </p>
+            </div>
+            <h1 class="hidden md:block hero-logo" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="/images/hero-text.svg" alt="Carmen, Salud con nombre de Mujer" class="w-[90%] max-w-[1230px] mx-auto">
+            </h1>
+          </div> -->
 
-        <!-- DESKTOP: Una imagen que contenga todo, porque está colocado de forma rara -->
+          <!-- DESKTOP: Una imagen que contenga todo, porque está colocado de forma rara -->
 
-        <!-- MOBILE: -->
-         <!-- <p>Salud con nombre de mujer</p>
-              <img>LOGO CARMEN
-              <p class="rosa">Una iniciativa de....</p>
-         
-         -->
-      
+          <!-- MOBILE: -->
+          <!-- <p>Salud con nombre de mujer</p>
+                <img>LOGO CARMEN
+                <p class="rosa">Una iniciativa de....</p>
+          
+          -->
+          <div class="down-arrows" aria-hidden="false" data-target="#next-section">
+            <svg class="chev" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="chev" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="chev" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
       </div>
   </div>
 </div>
+
 <!--Section 2: vectors as background images -->
+<div id="section_2">
 <div class="vectors">
   <!-- Column of images on -->
     <div id="columnIMG" >
 
-        <!-- Column of images 3 sections Css -> components.css -->
-
-       <!--CAMBIAR A TEXTO-->
+          <!-- Column of images 3 sections Css -> components.css -->
           <div id="col-1">
               <img id="col-img-1" src="/img/face26.png" alt=""> 
               <img id="col-img-1-2" src="/img/Rectangle_17.png" alt="">   
@@ -142,7 +148,24 @@
             Y, Carmen será  la voz y la cara de la salud de las mujeres.
             </p>
             <img id="col-img-3" src="/img/Rectangle_25.png" alt=""> 
+
+            <!--ARROW DOWN-->
+              <div class="down-arrows" data-target="#section3"          aria-hidden="false">
+                <svg class="chev" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="chev" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="chev" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="chev" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
           </div>
+          </div>
+
           <div id="col-4">
             <img id="col-img-4" src="/img/Rectangle_20.png" alt="">
             <img id="col-img-4-2" src="/img/Rectangle_21.png" alt="">
@@ -153,10 +176,25 @@
             <img id="col-img-5-2" src="/img/Rectangle_23.png" alt="">
           </div>
         </div>
-            
+    
+        <div id="imgChicas">
+          <img src="/img/imagenes-chicas.png" alt="">
+        </div>
+        <div id="logo">
+          <img src="/img/LOGO.png" alt="">
+        </div>
+        <div id="smallPhoneText">
+            <p >carmen Es una alianza de distintas empresas e instituciones comprometidas en visibilizar y cambiar los sesgos de género que afectan a la calidad de vida y a la salud de las mujeres. 
+            Y, Carmen será  la voz y la cara de la salud de las mujeres.
+            </p>
+        </div>
+        <div id="imgChicas">
+          <img src="/img/logoimg2.png" alt="">
+        </div>
+      
       
     </div>
-
+</div>
 <!-- Section 3: video cards  Css -> videoCardSec3.css -->
     <div id="section_3" class="py-5">
       <div class="container">
@@ -237,9 +275,24 @@
 <!-- Section 5: face mask with pink faces on the sides  CSS -> faceMask.css -->
   <div id="section_5">
     <div class="container">
+      <!--ARROW DONW HEART-->
+      <div class="down-hearts down-arrows" data-target="#section6" aria-hidden="false">
+          <svg class="heart" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 3.99 4 6.5 4 8.04 4 9.56 4.99 10.54 6.36 11.45 4.99 12.96 4 14.5 4 17.01 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <svg class="heart" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 3.99 4 6.5 4 8.04 4 9.56 4.99 10.54 6.36 11.45 4.99 12.96 4 14.5 4 17.01 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <svg class="heart" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 3.99 4 6.5 4 8.04 4 9.56 4.99 10.54 6.36 11.45 4.99 12.96 4 14.5 4 17.01 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <svg class="heart" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 3.99 4 6.5 4 8.04 4 9.56 4.99 10.54 6.36 11.45 4.99 12.96 4 14.5 4 17.01 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+      </div>
 
       <div id="letter_Carme_Sec5">
-      <p>Detrás de Carmen hay muchos nombres propios</p>
+        <p>Detrás de Carmen hay muchos nombres propios</p>
       </div>
 
       <div id="maskFace">
@@ -263,20 +316,15 @@
 <!-- Section 5.5: carousel with data and impact  CSS -> Section_Img-->
 <div id="section_Img">
     <div class="container">
-
       <div id="title">
         <p>DRA.</p>
       </div>
       <div id="title_Dra">
-       
         <p>
          Trinidad Herrero
         </p>
       </div>
-       <!--CAMBIAR A TEXTO-->
-       
       <div id="licencias_Sec5">
-       
         <p>Licenciada en Medicina y Cirugía por la Universidad de Navarra. Posteriormente, amplió su formación con maestrías en la Universidad de Cambridge y en el University College de Londres. Además, se licenció en Periodismo en 2011 y en Publicidad y Relaciones Públicas en 2014 por la Universidad de Murcia. En su trayectoria profesional, ha ejercido como catedrática de Anatomía y Embriología Humana en la Universidad de Murcia y ha ocupado cargos de gestión académica, incluyendo la vicedecanatura en la Facultad de Medicina de dicha universidad. En 2018, fue elegida presidenta de la Real Academia de Medicina y Cirugía de la Región de Murcia, siendo la primera mujer en ocupar este puesto. En 2021, ingresó en la Real Academia Nacional de Medicina, ocupando el sillón de Anatomía.</p>
       </div>
 
@@ -305,7 +353,6 @@
               <div class="col">
                 <img src="/img/Capa_1.png" alt="">
               </div>
-              
             </div>
           </div>
           <div class="container text-center">
@@ -331,23 +378,16 @@
               
             </div>
           </div>
-
-
-          
     </div> 
   </div>
  
 </div>
-
   <div id="section_6">
-    
     <div class="container">
-  
         <div id="title_impacto">
             <p>Algunos datos para entender a Carmen</p>
           </div>
       <!--Carrusel CSS -> carousel.css -->
-      <!--CAMBIAR A TEXTO-->
    <div id="carrusel" class="py-5">         
         <div id="swiper-final" class="swiper">
           <div class="swiper-wrapper">
@@ -371,7 +411,6 @@
         </div>
       </div>
     </div>
-
   <!--Section 6.2 CSS -> carousel.css -->
     <div id="maskFaceCarousel">
       <img id="CarouselImgMask" src="/img/Mask_group.png" alt=""> 
@@ -391,6 +430,7 @@
               <div class="dot_bottoms"></div>
             </div>
         </div>
+       
         <div class="circle">
           <div class="semi-circle"></div>
           <div class="needle"></div>
@@ -413,61 +453,80 @@
             </div>
         </div>
   </div>
-
+         <div class="title-dot">
+          <p>infartos</p>
+          <p>depresión y ansiedad</p>
+          <p>ictus</p>
+        </div>
+        <div class="text-row">
+        <div class="long-text">
+          <p>Las mujeres suelen tener síntomas más inespecíficos y, al haberse asociado y estudiado tradicionalmente con los hombres, a menudo no se identifica.</p>
+        </div>
+        <div class="long-text">
+          
+          <p>Las mujeres suelen tener síntomas más inespecíficos y, al haberse asociado y estudiado tradicionalmente con los hombres, a menudo no se identifica.</p>
+        </div>
+        <div class="long-text">
+          <p>Las mujeres suelen tener síntomas más inespecíficos y, al haberse asociado y estudiado tradicionalmente con los hombres, a menudo no se identifica.</p>
+        </div>
+      </div>
   </div>
+  
 <!-- Section 7: footer with form  CSS -> footer.css -->
 
   <footer id="section_7">
-    <video src="/img/GettyImages-2169919307.mp4" autoplay muted loop playsinline width="100%" ></video>
+      <video src="/img/GettyImages-2169919307.mp4" autoplay muted loop playsinline width="100%" ></video>
+      <div>
+        <img id="uneteImg" src="/img/unete_a.png" alt="">
+      </div>
     <div>
-      <img id="uneteImg" src="/img/unete_a.png" alt="">
+      <img id="footerCamenImg" src="/img/carmenName.png" alt="">
     </div>
-  <div>
-    <img id="footerCamenImg" src="/img/carmenName.png" alt="">
-  </div>
-  <form id="footerForm" class="form" novalidate>
-  <div class="form-grid">
-    <div class="field">
-      <label for="firstName">NOMBRE</label>
-      <input id="firstName" name="firstName" type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" title="Solo letras, espacios, guiones y apóstrofes. No números." required>
-      <div class="error-message" aria-live="polite"></div>
-    </div>
+    <form id="footerForm" class="form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="firstName">NOMBRE</label>
+            <input id="firstName" name="firstName" type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" title="Solo letras, espacios, guiones y apóstrofes. No números." required>
+            <div class="error-message" aria-live="polite"></div>
+          </div>
 
-    <div class="field">
-      <label for="lastName">APELLIDOS</label>
-      <input id="lastName" name="lastName" type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" title="Solo letras, espacios, guiones y apóstrofes. No números." required>
-      <div class="error-message" aria-live="polite"></div>
-    </div>
+          <div class="field">
+            <label for="lastName">APELLIDOS</label>
+            <input id="lastName" name="lastName" type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" title="Solo letras, espacios, guiones y apóstrofes. No números." required>
+            <div class="error-message" aria-live="polite"></div>
+          </div>
 
-    <div class="field">
-      <label for="email">EMAIL</label>
-      <input id="email" name="email" type="email" required>
-      <div class="error-message" aria-live="polite"></div>
-    </div>
+          <div class="field">
+            <label for="email">EMAIL</label>
+            <input id="email" name="email" type="email" required>
+            <div class="error-message" aria-live="polite"></div>
+          </div>
 
-    <div class="field">
-      <label for="phone">TELÉFONO</label>
-      <input id="phone" name="phone" type="tel" pattern="[0-9+()\-\s]{6,}" required>
-      <div class="error-message" aria-live="polite"></div>
-    </div>
-  </div>
+          <div class="field">
+            <label for="phone">TELÉFONO</label>
+            <input id="phone" name="phone" type="tel" pattern="[0-9+()\-\s]{6,}" required>
+            <div class="error-message" aria-live="polite"></div>
+          </div>
+        </div>
 
-  <label class="checkbox">
-    <input id="consent" name="consent" type="checkbox" required>
-    <span></span>
-   <p> He leído y acepto la política de privacidad y las
-    condiciones legales</p>
-    <div class="error-message" aria-live="polite"></div>
-  </label>
+        <label class="checkbox">
+          <input id="consent" name="consent" type="checkbox" required>
+          <span></span>
+        <p> He leído y acepto la política de privacidad y las
+          condiciones legales</p>
+          <div class="error-message" aria-live="polite"></div>
+        </label>
 
-  <button class="submit" type="submit">
-    <span>❤</span> ENVIAR
-  </button>
-</form>
+        <button class="submit" type="submit">
+          <span>❤</span> ENVIAR
+        </button>
+      </form>
 
   </footer>
 
-  <!-- removed duplicate global logo; single logo remains inside #head_video -->
+ 
+   <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/scroll.js" defer></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

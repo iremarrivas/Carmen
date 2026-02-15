@@ -18,27 +18,6 @@
   }
 }
 
-@media (max-width: 400px) {
-  .vectors {
-    --bg-pos-1: center 990%;
-    --bg-pos-2: center 40%;
-    --bg-pos-3: center 50%;
-    --bg-1: 85% auto;
-    --bg-2: 75% auto;
-    --bg-3: 65% auto;
-  }
-}
-
-@media (min-width: 401px) and (max-width: 768px) {
-  .vectors {
-    --bg-pos-1: center 30%;
-    --bg-pos-2: center 40%;
-    --bg-pos-3: center 50%;
-    --bg-1: 90% auto;
-    --bg-2: 80% auto;
-    --bg-3: 70% auto;
-  }
-}
 
 @media (min-width: 769px) and (max-width: 992px) {
   .vectors {
@@ -151,7 +130,7 @@
 }
 
 #col-3 #col-img-3 {
-  transform: translateX(80%) translateY(250%);
+  transform: translateX(80%) translateY(280%);
 }
 /*Colum 4*/
 #col-4 #col-img-4 {
@@ -175,35 +154,30 @@
    transform: translateX(-70%) translateY(350%);
 }
 
-/* ---------- Images general ---------- */
-
+#col-3 .down-arrows {
+ transform: translateX(90px) translateY(50px);
+  position: static; 
+  margin-top: 15px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  z-index: 10;
+  color: #FF3688; 
+  pointer-events: auto;
+}
+#col-3 .chev {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
 
 @media (max-width: 640px) {
-  
-#col-3 #col-pinkText{
-
+  #col-pinkText { max-width: 90%; font-size: 14px; }
+  #col-3 .down-arrows { margin-top: 10px; }
+  #col-3 .chev { width: 28px; height: 28px; }
 }
-}
-
-@media (min-width: 641px) and (max-width: 800px) {
-  
-}
-
-@media (min-width: 801px) and (max-width: 1024px) {
-  
-}
-
-@media (min-width: 1025px) {
-  #col-3 #col-pinkText{
-  width: 90%;
-  transform: translateX(-15px) translateY(60%);
-}
-}
-
-/* ---------- Special variants ---------- */
-
-.vector--pink { width: var(--pink-w); }
-.vector--logo { width: var(--logo-w); }
 
 /* 
    DESKTOP ART DIRECTION (>=1200px)-----------------
@@ -214,8 +188,6 @@
   .vectors__grid {
     position: relative;
   }
-
-  /* Desktop: nudge the main background down and keep it large */
   .vectors {
     --bg-1: 120% auto;
     --bg-pos-1: center 600px;
@@ -223,22 +195,17 @@
     --bg-pos-3: 390px 1328px;
     --vectors-offset: 20px;
   }
-
   .vector-img[data-pos] {
     position: absolute;
     width: var(--img-w);
     height: var(--img-h);
   }
-
-  
-
   .vector--pink {
     position: absolute;
     top: 400px;
     left: 50%;
     transform: translateX(-50%);
   }
-
   .vector--logo {
     position: absolute;
     top: 100px;
@@ -264,17 +231,13 @@
    MOBILE
  */
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
 
   .vectors {
     padding: 24px 0;
-    --bg-1: 90% auto;
-    --bg-2: 80% auto;
-    --bg-3: 28% auto;
-    --bg-pos-1: center 18%;
-    --bg-pos-2: center 30%; /* Move background position 2 higher */
-    --bg-pos-3: center 50%;
+    background-image: none;
     --vectors-offset: 24px;
+    height: 60rem;
   }
 
   .vectors__grid {
@@ -285,6 +248,43 @@
   .vector-img {
     max-width: 120px;
   }
+ 
+  #columnIMG{
+    display: none;
+  }
+  #imgChicas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(50px);
+  }
+  #logo{
+    width: 100%;
+   
+  }
+  #logo img{
+    display: flex;
+   align-items: center;
+    justify-content: center;
+   transform: translateX(9rem) translateY(0px);
+    width: 30%;
+    height: 100px;
+    overflow: hidden;
+  }
+  #smallPhoneText{
+  width: 80%;
+  color: #FF3688;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  transform: translateX(2rem) translateY(50px);
+} 
+   #bottomImgCol{
+    display: flex;
+    justify-content: center;
+    transform: translateY(50px);
+}
 }
 
 :root {
@@ -317,11 +317,65 @@
   }
 }
 
-@media (max-width: 600px) {
-  .vectors {
-    --bg-pos-1: center 18%;
-    --bg-pos-2: center 30%;
-    --bg-pos-3: center 50%;
-  }
+
+@media (min-width: 641px) and (max-width: 800px) {
+  #imgChicas{
+  display: none;
+  overflow: hidden;
+}
+#logo{
+  display: none;
 }
 
+#smallPhoneText{
+  display: none;
+  overflow: hidden;
+} 
+#bottomImgCol{
+  display: none;
+  overflow: hidden;}
+
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  #imgChicas{
+  display: none;
+  overflow: hidden;
+}
+#logo{
+  display: none;
+}
+
+#smallPhoneText{
+  display: none;
+  overflow: hidden;
+} 
+#bottomImgCol{
+  display: none;
+  overflow: hidden;}
+
+}
+
+@media (min-width: 1025px) {
+  #col-3 #col-pinkText{
+  width: 90%;
+  transform: translateX(-15px) translateY(60%);
+}
+#imgChicas{
+  display: none;
+  overflow: hidden;
+}
+#logo{
+  display: none;
+}
+
+#smallPhoneText{
+  display: none;
+  overflow: hidden;
+} 
+#bottomImgCol{
+  display: none;
+  overflow: hidden;
+}
+
+}

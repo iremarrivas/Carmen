@@ -26,8 +26,6 @@
  */
 
 .card {
-
- 
   --card-radius: var(--card-default-radius, 0.7rem);
   --card-video-fit: var(--card-default-video-fit, cover);
   transition: transform 200ms ease, filter 200ms ease;
@@ -35,10 +33,6 @@
   overflow: hidden;
   position: relative;
 }
-
-
-
-
 /* 
    Card video
  */
@@ -55,15 +49,12 @@
 .card-center-img{
   position: absolute;
   z-index: 7;
-  
-
-
 }
 /*Card icon position*/
   .card-center-Icon{
     position: absolute;
     left: 50%;
-    top: 10%;/* slightly below the centered icon */
+    top: 10%;
     transform: translateX(-50%);
     z-index: 8;
     pointer-events: none;
@@ -77,18 +68,12 @@
     height: auto;
   }
 
-  @media (max-width: 708px){
-    .card-center-Icon{ top: 20%; }
-    .card-center-Icon img{ width: 100%; }
-  }
-
-
 /* Bottom image inside the card, centered at the base */
 .card-bottom-text{
   position: absolute;
   color: white;
   font-size: 20px;
-  z-index: 7; /* sit above overlay and centered icon */
+  z-index: 7; 
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -97,14 +82,10 @@
   left: 5%;
   padding: 0 30px; bottom: 2%;
 }
-
-
-
-
 /* Top image inside the card, centered near the top */
 .card-top-text{
  color: white;
-  z-index: 8; /* sit above center and bottom icons */
+  z-index: 8;
   font-size: 30px;
 text-transform: uppercase; 
 display: flex; 
@@ -116,8 +97,6 @@ position: absolute;
 top: 50%;
  
 }
-
-
 
 /*cars video icon image*/
 .card.has-center .card-center-img{
@@ -151,7 +130,6 @@ top: 50%;
 }
 
 #card-2 {
-  /* 40% opacity overlay "40% transparent" */
   --card-overlay-color: rgba(222, 0, 71, 0.4);
   --card-overlay-opacity: 1;
 }
@@ -161,26 +139,13 @@ top: 50%;
   --card-overlay-opacity: 1;
 }
 
-/* 
-   Layout – Desktop
-*/
-
-@media (min-width: 769px) {
-  .section-3__row {
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
- 
-}
-
-/* 
-   Layout – Mobile
-*/
-
-@media (max-width: 708px) {
+@media (max-width: 640px) {
   .section-3__row {
     flex-direction: column;
     gap: var(--card-gap-mobile);
+  }
+  #card-2{
+    top: -100px;
   }
 
   .section-3__col {
@@ -188,12 +153,6 @@ top: 50%;
     max-width: 100%;
   }
 
-  .card {
-    --card-lift: calc(var(--card-lift) * 0.5);
-    margin-bottom: 0.75rem;
-  }
-
-  /* Make card and video stretch to avoid empty space on small screens */
   .card {
     display: flex;
     flex-direction: column;
@@ -208,23 +167,10 @@ top: 50%;
   }
 }
 
-/**/
-@media (max-width: 768px) {
-  .card {
-    /* allow min-height to take effect 
-    min-height: var(--section3-height);*/
-  }
-}
-
-
-/* per-card lift values are scoped to desktop above */
 
 @media (max-width: 1200px) {
   .section-3__container {
     width: 90%;
-  }
-  .card {
-    --card-lift: 60px;
   }
 }
 
@@ -237,9 +183,10 @@ top: 50%;
     gap: 16px;
   }
   .card {
-    --card-lift: 40px;
     margin-bottom: 1rem;
   }
+  .card-center-Icon{ top: 20%; }
+  .card-center-Icon img{ width: 100%; }
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
@@ -250,22 +197,9 @@ top: 50%;
   .section-3__container {
     width: 95%;
   }
-  .card {
-    --card-lift: 50px;
-  }
-}
-
-@media (max-width: 480px) {
-
   .section-3__row {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .card {
-    --card-lift: 20px;
-    margin-bottom: 1.5rem;
-  }
-  .card-video {
-    aspect-ratio: 16 / 9;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
+
