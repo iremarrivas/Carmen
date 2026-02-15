@@ -1,0 +1,29 @@
+
+:root{
+  --card-gap: 1.25rem; /* default gap between section 3 cards */
+  --card-gap-mobile: .75rem; /* fallback mobile gap */
+  --card-min-width: 100px;
+  --card-max-width: 450px;
+  --nav-text: #EFE6DF;
+  --section3-height: 720px; /* reserved height for the cards area used by vectors-section */
+
+  --card-aspect-ratio: 9/16;
+  --col-height: 900px;
+
+  /* Global image & background variables centralized from components.css */
+  --img-w: clamp(88px, 6.5vw, 139px);
+  --img-h: 205px;
+ 
+  --bg-1: 100% auto;
+  --bg-2: 95% auto;
+  --bg-3: 40% auto;
+  --bg-pos-1: center 90%;
+  --bg-pos-2: center 80%;
+  --bg-pos-3: center 40%;
+  --vectors-offset: 20px;
+  /* Card defaults centralized from videoCardSec3.css */
+
+  --card-default-radius: 0.7rem;
+  --card-default-video-fit: cover;
+}
+
