@@ -1,5 +1,5 @@
 body { padding-top: 0; background-color: #EFE6DF; } 
-.navbar .nav-link, .navbar .navbar-text, .navbar .navbar-brand { color: var(--nav-text); }/* ensure contrast */
+.navbar .nav-link, .navbar .navbar-text, .navbar .navbar-brand { color: var(--nav-text); }
 
 /*Section 4*/
 
@@ -7,7 +7,6 @@ body { padding-top: 0; background-color: #EFE6DF; }
   background-color: #EFE6DF;
   width: 100%;
 }
-
 #generoImage{
   display: block;
   width: 100%;

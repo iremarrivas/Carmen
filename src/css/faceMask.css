@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/RobotoCondensed-Medium.woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
 /* 
    Mask Face
 */
@@ -175,8 +183,6 @@
   60%  { opacity: 1; transform: translateY(8px) scale(.98); }
   100% { opacity: 0; transform: translateY(16px) scale(.95); }
 }
-
-
 
 @media (max-width: 640px) {
 

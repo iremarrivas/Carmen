@@ -1,4 +1,12 @@
 /* Centered image inside Section 5 */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/RobotoCondensed-Medium.woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
 #section_Img{
   position: relative;
   background-color: #FF3688;
@@ -7,8 +15,6 @@
   padding: 36px 0;
   color: inherit;
 }
-
-
 #title {
   position: absolute;
   width: 100%;
@@ -30,7 +36,6 @@
   text-transform: uppercase;
   color: #EFE6DF;
   font-size: 55px;
- 
   height: auto;
   padding-bottom: 20px; 
 }
@@ -38,7 +43,6 @@
 
 #licencias_Sec5 {
   top: 5%;
-  
   text-transform: uppercase;
   color: #EFE6DF;
   margin: 0 auto;
@@ -61,7 +65,6 @@
   text-align: center;
 }
 
-
 #columnTopImg {
   position: absolute; 
   width: 100%;
@@ -76,7 +79,6 @@
   margin: 0 auto;
   display: block;
 }
-
 
 @media (max-width: 640px) {
   #miembros {
