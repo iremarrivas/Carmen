@@ -12,7 +12,6 @@
 .navbar-toggler svg{display:block; width:31px; height:26px}
 .menu-label{font-weight:600}
 
-
 /* Thinner ring for the navbar toggler */
 .navbar-toggler:focus,
 .navbar-toggler:active,
@@ -21,8 +20,6 @@
   box-shadow: 0 0 0 0.12rem rgba(15, 7, 13, 0.2) !important;
   border-width: 1px !important;
 }
-
-
 
 .navbar.bg-body-tertiary{
   background-color: transparent !important;

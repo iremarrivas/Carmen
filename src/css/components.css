@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/RobotoCondensed-Regular.woff');
+  font-weight: 500;
+  font-style: normal;
+}
 .vectors {
   position: relative;
   width: 100%;
@@ -359,7 +365,7 @@
 @media (min-width: 1025px) {
   #col-3 #col-pinkText{
   width: 90%;
-  transform: translateX(-15px) translateY(60%);
+  transform: translateX(-15px) translateY(80%);
 }
 #imgChicas{
   display: none;

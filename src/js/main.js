@@ -76,11 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		return true;
 	}
 
-	// live validation on blur/input. Additionally sanitize name fields while typing.
+	// live validation on blur/input.
 	controls.forEach(c => {
 		c.addEventListener('input', () => {
 			if (c.id === 'firstName' || c.id === 'lastName') {
-				// allow letters (including accents), spaces, hyphen and apostrophe
+				// allow letters
 				const allowed = c.value.match(/[A-Za-zÀ-ÖØ-öø-ÿ\s'\-]+/g);
 				const cleaned = allowed ? allowed.join('') : '';
 				if (cleaned !== c.value) {
@@ -95,9 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			}
 			if (c.id === 'phone') {
-				const allowed = c.value.match(/[0-9+()\-\s]+/g);
-				const cleaned = allowed ? allowed.join('') : '';
-				if (cleaned !== c.value) {
+				const phoneValue = c.value || '';
+				//  +
+				let cleaned = phoneValue.replace(/[^0-9()\-\s+]/g, '');
+				const hadLeadingPlus = phoneValue.trim().startsWith('+');
+				
+				cleaned = cleaned.replace(/\+/g, '');
+				if (hadLeadingPlus) cleaned = '+' + cleaned;
+				if (cleaned !== phoneValue) {
 					c.value = cleaned;
 					showError(c, 'Solo se permiten números y los símbolos +()-.');
 					if (c._errorTimeout) clearTimeout(c._errorTimeout);
@@ -132,26 +137,33 @@ const swiperContainer = document.querySelector('#swiper-final .swiper-wrapper');
 
 window.addEventListener('load', function() {
 
-  
   if (typeof Swiper !== 'undefined') {
     const swiper = new Swiper('#swiper-final', {
       loop: true,
       centeredSlides: true,
-      slidesPerView: 1,
+      slidesPerView: 2,
+	  spaceBetween: 10,
       speed: 2500, 
-      autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
+    	autoplay: {
+         delay: 1500,
+         disableOnInteraction: false,
       },
       effect: 'coverflow',
       coverflowEffect: {
         rotate: 0,
-        stretch: 500, 
+        stretch: 120, 
         depth: 200,  
         modifier: 1,
         slideShadows: false, 
       },
 	   breakpoints: {
+		1024: {
+		slidesPerView: 1,
+		spaceBetween: -450,
+		coverflowEffect: {
+			stretch: 300, 
+		},
+		},
 		
 		748: {
 		slidesPerView: 1,
@@ -168,7 +180,7 @@ window.addEventListener('load', function() {
         },
 		},
 	},
-		// renderizado
+		//pagination: 
       observer: true,
       observeParents: true,
       pagination: {
@@ -176,47 +188,16 @@ window.addEventListener('load', function() {
         clickable: true,
       },
       on: {
-        slideChange: function () {
-          console.log('Slide cambiado a:', this.activeIndex);
-        },
-        reachEnd: function () {
-          console.log('Último slide alcanzado, reiniciando...');
-          this.slideToLoop(0); 
-        },
-      },
+       init() {
+         
+          this.pagination.render();
+          this.pagination.update();
+        }
+      }
     });
   } else {
     console.error("Swiper no está cargado correctamente.");
   }
-});
-
-// Enhanced Swiper initialization for new-carousel
-document.addEventListener('DOMContentLoaded', () => {
-  const newSwiper = new Swiper('#new-carousel', {
-    loop: true,
-    slidesPerView: 1,
-	speed: 2500, 
-    autoplay: {
-      delay: 1500, 
-      disableOnInteraction: false, 
-    },
-	effect: 'coverflow',
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 150, // (gap)
-        depth: 200,   
-        modifier: 1,
-        slideShadows: false, 
-      },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
 });
 
 // Animations
